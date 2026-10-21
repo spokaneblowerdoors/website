@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base
+  title="Contact | Spokane Blower Doors"
+  description="Contact Spokane Blower Doors to schedule a blower door test or get a quote. Call 509-903-8595. Serving Spokane and North Idaho."
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>Contact</h1>
+      <p class="lead">Testing is {business.hours.toLowerCase()}. {business.pricing}.</p>
+      <div class="contact-grid">
+        <div class="card">
+          <h2 style="font-size:1.25rem">Call</h2>
+          <p><a class="big-link" href={business.phoneHref}>{business.phone}</a></p>
+        </div>
+        <div class="card">
+          <h2 style="font-size:1.25rem">Email</h2>
+          <p><a href={`mailto:${business.email}`}>{business.email}</a></p>
+        </div>
+        <div class="card">
+          <h2 style="font-size:1.25rem">Service area</h2>
+          <p>{business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+        </div>
+      </div>
+      <!-- Contact form is added in Phase 3 (Web3Forms). -->
+    </div>
+  </section>
+</Base>

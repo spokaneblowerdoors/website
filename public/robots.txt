@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://spokaneblowerdoors.com/sitemap-index.xml

@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base title="Page not found | Spokane Blower Doors" description="The page you were looking for isn't here." noindex>
+  <section class="section">
+    <div class="wrap prose">
+      <h1>Page not found</h1>
+      <p>Sorry, that page isn't here. Try the <a href="/">home page</a> or <a href="/services/">our services</a>, or call <a href={business.phoneHref}>{business.phone}</a>.</p>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import { business, services } from '../../data/business';
+---
+<Base
+  title="Services | Spokane Blower Doors"
+  description="Blower door tests, duct leakage tests, Washington C3 calculations, Energy Star tests and home energy audits in Spokane and North Idaho."
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>Services</h1>
+      <p class="lead">Serving {business.customersPhrase} across {business.serviceArea}.</p>
+      <div class="cards">
+        {services.map((s) => (
+          <article class="card">
+            <h2 style="font-size:1.25rem">{s.name}</h2>
+            <p>{s.short}</p>
+            <a class="more" href={`/services/${s.slug}/`}>Learn more<span class="visually-hidden"> about {s.name}</span><span aria-hidden="true"> →</span></a>
+          </article>
+        ))}
+      </div>
+      <div class="cta" style="margin-top:40px">
+        <div>
+          <h2>Get a quote</h2>
+          <p>{business.pricing}. Testing is {business.hours.toLowerCase()}.</p>
+        </div>
+        <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
+      </div>
+    </div>
+  </section>
+</Base>

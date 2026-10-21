@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { business, services, type Service } from '../../data/business';
+
+export function getStaticPaths() {
+  return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
+}
+
+interface Props { service: Service }
+const { service } = Astro.props;
+const others = services.filter((s) => s.slug !== service.slug);
+---
+<Base title={service.title} description={service.description}>
+  <section class="section">
+    <div class="wrap prose">
+      <p class="breadcrumb"><a href="/services/">Services</a> / {service.name}</p>
+      <h1>{service.name}</h1>
+      <p class="lead">{service.short}</p>
+      <p>Spokane Blower Doors serves {business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+      <p>Testing is {business.hours.toLowerCase()}. {business.pricing}: <a href={business.phoneHref}>{business.phone}</a>.</p>
+      <p><a class="btn btn-primary" href="/contact/">Ask about {service.name}</a></p>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="wrap">
+      <h2>Other services</h2>
+      <ul class="plain">
+        {others.map((s) => <li><a href={`/services/${s.slug}/`}>{s.name}</a></li>)}
+      </ul>
+    </div>
+  </section>
+</Base>

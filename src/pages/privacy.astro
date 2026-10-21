@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base
+  title="Privacy Policy | Spokane Blower Doors"
+  description="How Spokane Blower Doors handles information on this website. No tracking cookies or advertising."
+>
+  <section class="section">
+    <div class="wrap prose">
+      <h1>Privacy Policy</h1>
+      <p>This website does not use tracking cookies, analytics or advertising.</p>
+      <p>If you call or email us, we use your information only to reply to you about your request.</p>
+      <p>Questions? Contact {business.name} at <a href={business.phoneHref}>{business.phone}</a> or <a href={`mailto:${business.email}`}>{business.email}</a>.</p>
+    </div>
+  </section>
+</Base>

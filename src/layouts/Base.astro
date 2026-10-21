@@ -1,0 +1,112 @@
+---
+import { business, services } from '../data/business';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const path = Astro.url.pathname;
+
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/services/', label: 'Services' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  name: business.name,
+  url: business.url,
+  telephone: '+1-509-903-8595',
+  email: business.email,
+  logo: `${business.url}/favicon.svg`,
+  image: `${business.url}/og-image.png`,
+  priceRange: 'Call for a quote',
+  areaServed: [
+    ...business.towns.map((t) => ({ '@type': 'City', name: t })),
+    { '@type': 'Place', name: business.serviceArea },
+  ],
+  founder: { '@type': 'Person', name: business.owner },
+  makesOffer: services.map((s) => ({
+    '@type': 'Offer',
+    itemOffered: { '@type': 'Service', name: s.name, description: s.short },
+  })),
+};
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="theme-color" content="#0f4c5c" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${business.url}/og-image.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="/" aria-label={`${business.name} home`}>
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="3" width="24" height="26" rx="3" fill="currentColor" opacity=".15"/><rect x="4" y="3" width="24" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 9.5v13M9.5 16h13" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span>{business.name}</span>
+        </a>
+        <nav aria-label="Main">
+          <ul>
+            {nav.map((n) => (
+              <li><a href={n.href} aria-current={(n.href === '/' ? path === '/' : path.startsWith(n.href)) ? 'page' : undefined}>{n.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+        <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="footer-name">{business.name}</p>
+          <p>Serving {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+          <p>Hours: {business.hours}</p>
+        </div>
+        <div>
+          <p class="footer-head">Contact</p>
+          <p><a href={business.phoneHref}>{business.phone}</a><br /><a href={`mailto:${business.email}`}>{business.email}</a></p>
+        </div>
+        <div>
+          <p class="footer-head">Services</p>
+          <ul class="plain">
+            {services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.name}</a></li>)}
+          </ul>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <p>© {new Date().getFullYear()} {business.name} · <a href="/privacy/">Privacy Policy</a></p>
+      </div>
+    </footer>
+
+    <a class="mobile-call" href={business.phoneHref}>Call {business.phone}</a>
+  </body>
+</html>
