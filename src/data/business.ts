@@ -64,6 +64,6 @@ export const services: Service[] = [
     short: 'For homeowners: finding drafts and air leaks.',
     title: 'Home Energy Audit Spokane | Spokane Blower Doors',
     description:
-      'Home energy audits in Spokane and North Idaho to help homeowners find drafts and air leaks. Call Spokane Blower Doors at 509-903-8595.',
+      'Home energy audits in Spokane, Spokane Valley, Coeur d\'Alene and Post Falls. Call Spokane Blower Doors at 509-903-8595 for a quote.',
   },
 ];

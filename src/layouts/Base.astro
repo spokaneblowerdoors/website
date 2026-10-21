@@ -28,12 +28,10 @@ const jsonLd = {
   email: business.email,
   logo: `${business.url}/favicon.svg`,
   image: `${business.url}/og-image.png`,
-  priceRange: 'Call for a quote',
   areaServed: [
     ...business.towns.map((t) => ({ '@type': 'City', name: t })),
     { '@type': 'Place', name: business.serviceArea },
   ],
-  founder: { '@type': 'Person', name: business.owner },
   makesOffer: services.map((s) => ({
     '@type': 'Offer',
     itemOffered: { '@type': 'Service', name: s.name, description: s.short },

@@ -5,3 +5,4 @@ dist/
 .astro/
 .site-builder/gh-login.log
 screenshots/
+.site-builder/audit/

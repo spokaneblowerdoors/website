@@ -24,6 +24,20 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Duct leakage tests
 - Home energy audits
 
+## Service descriptions shown on the site (approved by owner, 2026-10-21)
+- New-home code tests: "Blower door tests that new homes need to pass the energy code."
+- Duct leakage tests: "Measuring how much air leaks from heating and cooling ducts."
+- Energy Star tests: "Testing for homes going through Energy Star."
+- Home energy audits: "For homeowners: finding drafts and air leaks."
+- Washington C3 calculations: "Showing a home complies with the Washington State Energy Code using the Washington points system."
+
+## Privacy promises (approved by owner, 2026-10-21)
+- The website does not use tracking cookies, analytics or advertising. (Keep Cloudflare Web Analytics OFF.)
+- Information from calls/emails is used only to reply about the request.
+
+## Structured data category
+- schema.org type HomeAndConstructionBusiness (approved by owner, 2026-10-21)
+
 ## Prices
 - Don't show prices; say "call for a quote" (confirmed by owner, 2026-10-21)
 

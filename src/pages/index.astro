@@ -4,12 +4,12 @@ import { business, services } from '../data/business';
 ---
 <Base
   title="Blower Door Test Spokane | Spokane Blower Doors"
-  description="Blower door tests, duct leakage tests, Washington energy code compliance and Energy Star testing in Spokane and North Idaho. Call 509-903-8595."
+  description="Blower door, duct leakage, Washington energy code and Energy Star testing in Eastern Washington and North Idaho. Call 509-903-8595."
 >
   <section class="hero">
     <div class="wrap">
-      <h1>Blower door and duct leakage testing in Spokane and North Idaho</h1>
-      <p>Energy code testing for {business.customersPhrase} across {business.serviceArea}.</p>
+      <h1>Blower door and duct leakage testing in Eastern Washington and North Idaho</h1>
+      <p>Testing and energy code calculations for {business.customersPhrase} across {business.serviceArea}.</p>
       <div class="actions">
         <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
         <a class="btn btn-secondary" href="/contact/">Send a message</a>
@@ -20,7 +20,7 @@ import { business, services } from '../data/business';
   <section class="section">
     <div class="wrap">
       <h2>Services</h2>
-      <p class="lead">Testing and calculations for new homes, remodels and existing homes. {business.pricing}.</p>
+      <p class="lead">{business.pricing}.</p>
       <div class="cards">
         {services.map((s) => (
           <article class="card">

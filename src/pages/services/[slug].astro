@@ -17,7 +17,7 @@ const others = services.filter((s) => s.slug !== service.slug);
       <h1>{service.name}</h1>
       <p class="lead">{service.short}</p>
       <p>Spokane Blower Doors serves {business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
-      <p>Testing is {business.hours.toLowerCase()}. {business.pricing}: <a href={business.phoneHref}>{business.phone}</a>.</p>
+      <p>Service is {business.hours.toLowerCase()}. {business.pricing}: <a href={business.phoneHref}>{business.phone}</a>.</p>
       <p><a class="btn btn-primary" href="/contact/">Ask about {service.name}</a></p>
     </div>
   </section>
