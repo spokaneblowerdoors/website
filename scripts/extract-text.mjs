@@ -7,7 +7,7 @@ import { writeFileSync } from 'node:fs';
 const [outFile, base = 'http://localhost:4321'] = process.argv.slice(2);
 const pages = [
   '/', '/services/', '/services/blower-door-testing/', '/services/duct-leakage-testing/',
-  '/services/washington-energy-code-compliance/',
+  '/services/eri-scores/', '/services/washington-energy-code-compliance/',
   '/services/home-energy-audits/', '/about/', '/contact/', '/thank-you/', '/privacy/', '/404.html',
 ];
 

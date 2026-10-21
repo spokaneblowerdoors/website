@@ -22,6 +22,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Duct leakage tests
 - Washington C3 calculations
 - Home energy audits
+- ERI scores (owner, 2026-10-21): Energy Rating Index scores, including HERS Index scores, calculated under ANSI/RESNET/ICC 301. Used for: energy code compliance via the ERI path (WSEC in Washington; IECC in Idaho), HERS Index scores, builder marketing, utility/tax incentive programs requiring an ERI or HERS Index score. Result: ERI / HERS Index score.
 - (Energy Star tests: owner offers these but said "don't mention Energy Star for now", 2026-10-21. Keep ENERGY STAR off the site entirely until the owner says otherwise.)
 
 ## Service descriptions and details shown on the site (approved by owner, 2026-10-21)
@@ -33,7 +34,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 ## Technical details (owner, 2026-10-21)
 - Voice: building scientists; precise, technical wording.
 - Describe the business as building science / building performance testing.
-- Standards/protocols followed (business-wide): ANSI/RESNET/ICC 380; ANSI/RESNET/ICC 310; WSEC / IECC test procedures.
+- Standards/protocols followed (business-wide): ANSI/RESNET/ICC 301; ANSI/RESNET/ICC 380; ANSI/RESNET/ICC 310 (owner confirmed both 301 and 310, 2026-10-21); WSEC / IECC test procedures.
 - Results reported (as applicable): CFM50 and ACH50; total duct leakage; duct leakage to outside; written report / code form.
 - Equipment: calibrated Retrotec equipment (owner confirmed "calibrated").
 
@@ -50,7 +51,9 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Don't show prices; say "call for a quote" (confirmed by owner, 2026-10-21)
 
 ## Licenses, certifications, insurance, years in business
-- None on the site for now (owner, 2026-10-21). Do not mention any certification, insurance, or experience length.
+- Credential (owner's words, 2026-10-21): "We are credentialled through Building Science Institute. I'm a field verifier." Shown as: "Credentialed through Building Science Institute (BSI)." (ERI page approved by owner 2026-10-21 with this wording.)
+- Do NOT name the owner or any individual on the site: owner finds it unprofessional and is not the only rater (owner, 2026-10-21). Speak as the business ("we").
+- No other certifications, insurance, or experience length on the site (owner, 2026-10-21).
 
 ## Towns to mention (owner, 2026-10-21)
 - Spokane, Spokane Valley, Coeur d'Alene, Post Falls
@@ -64,7 +67,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 ## Look and feel
 - Tone: precise, technical, professional: building scientists (owner, 2026-10-21; replaces "straightforward and professional")
 - Colors: clean blue/green (owner, 2026-10-21)
-- Search phrases approved (owner, 2026-10-21): blower door test Spokane; duct leakage test Spokane; Washington energy code compliance; blower door Coeur d'Alene; home energy audit Spokane; new construction air test. ("Energy Star home testing" is on hold with ENERGY STAR.)
+- Search phrases approved (owner, 2026-10-21): blower door test Spokane; duct leakage test Spokane; Washington energy code compliance; blower door Coeur d'Alene; home energy audit Spokane; new construction air test; HERS rating Spokane; ERI score Spokane; HERS rater Coeur d'Alene. ("Energy Star home testing" is on hold with ENERGY STAR.)
 
 ## Do NOT put on the site
 - ENERGY STAR, for now (owner, 2026-10-21)

@@ -4,12 +4,12 @@ import { business, services } from '../data/business';
 ---
 <Base
   title="Blower Door Test Spokane | Spokane Blower Doors"
-  description="Building performance testing in Eastern WA and North Idaho: blower door and duct leakage tests, energy audits and C3 calculations."
+  description="Building performance testing in Eastern WA and North Idaho: blower door and duct leakage tests, ERI scores, C3 calculations and audits."
 >
   <section class="hero">
     <div class="wrap">
       <h1>Building performance testing in Eastern Washington and North Idaho</h1>
-      <p>Envelope airtightness and duct leakage testing, Washington energy code calculations and home energy audits for {business.customersPhrase}.</p>
+      <p>Envelope airtightness and duct leakage testing, ERI scores, Washington energy code calculations and home energy audits for {business.customersPhrase}.</p>
       <div class="actions">
         <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
         <a class="btn btn-secondary" href="/contact/">Send a message</a>
@@ -42,6 +42,7 @@ import { business, services } from '../data/business';
             {business.standards.map((s) => <li>{s}</li>)}
           </ul>
           <p style="margin-top:12px">Equipment: calibrated {business.equipment} test equipment.</p>
+          <p>{business.credential}</p>
         </div>
         <div>
           <h2>Reported results, as applicable</h2>

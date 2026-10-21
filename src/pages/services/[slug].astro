@@ -19,7 +19,7 @@ const others = services.filter((s) => s.slug !== service.slug);
       {service.body.map((p) => <p>{p}</p>)}
       {service.reports && (
         <>
-          <h2>{service.slug === 'washington-energy-code-compliance' ? 'Deliverable' : 'Reported results'}</h2>
+          <h2>{service.slug === 'washington-energy-code-compliance' ? 'Deliverable' : service.slug === 'eri-scores' ? 'Result' : 'Reported results'}</h2>
           <ul>{service.reports.map((r) => <li>{r}</li>)}</ul>
         </>
       )}

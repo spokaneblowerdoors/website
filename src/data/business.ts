@@ -3,7 +3,6 @@
 
 export const business = {
   name: 'Spokane Blower Doors',
-  owner: 'Gabe Bell',
   phone: '509-903-8595',
   phoneHref: 'tel:+15099038595',
   email: 'Gabriel@2ohairsolutions.com',
@@ -15,7 +14,9 @@ export const business = {
   customersPhrase: 'home builders, homeowners, HVAC contractors and remodelers',
   pricing: 'Call for a quote',
   equipment: 'Retrotec',
+  credential: 'Credentialed through Building Science Institute (BSI).',
   standards: [
+    'ANSI/RESNET/ICC 301',
     'ANSI/RESNET/ICC 380',
     'ANSI/RESNET/ICC 310',
     'Washington State Energy Code (WSEC) and IECC test procedures',
@@ -65,6 +66,19 @@ export const services: Service[] = [
     title: 'Duct Leakage Test Spokane | Spokane Blower Doors',
     description:
       'Duct leakage testing per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Eastern WA and North Idaho. Call 509-903-8595.',
+  },
+  {
+    slug: 'eri-scores',
+    name: 'ERI Scores',
+    short: 'Energy Rating Index (ERI) scores, including HERS Index scores, calculated under ANSI/RESNET/ICC 301.',
+    body: [
+      'ERI scores are used for energy code compliance through the ERI path (Washington State Energy Code in Washington; IECC in Idaho), for HERS Index scores, for builder marketing, and for utility and tax incentive programs that require an ERI or HERS Index score.',
+      'Credentialed through Building Science Institute (BSI).',
+    ],
+    reports: ['ERI / HERS Index score'],
+    title: 'ERI & HERS Index Scores | Spokane Blower Doors',
+    description:
+      'ERI and HERS Index scores under ANSI/RESNET/ICC 301 for code compliance (WSEC, IECC), builder marketing and incentives. Call 509-903-8595.',
   },
   {
     slug: 'washington-energy-code-compliance',

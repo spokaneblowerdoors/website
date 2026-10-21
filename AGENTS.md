@@ -17,13 +17,16 @@
 - If a request needs a fact that isn't there, stop and ask in the issue or PR.
 
 ## The owner
-- The owner, Gabe Bell, is non-technical. Explain everything in plain language, with no jargon.
+- The owner, Gabe Bell, is a building-science expert but non-technical about websites and code.
+  Explain website matters in plain language, with no web jargon.
 
 ## Voice
 - The owner is a building scientist: precise, technical, professional wording. Use correct standard
   names and units (e.g. ANSI/RESNET/ICC 380, CFM50, ACH50). Never assign a standard or metric to a
   service unless business-facts.md does. No superlatives unless business-facts.md backs them.
-- No certifications, insurance, years in business, reviews, prices, or ENERGY STAR on the site (owner's choice).
+- Never name the owner or any individual on the site; speak as the business ("we").
+- The only credential shown is the BSI wording in business-facts.md; never upgrade it
+  (e.g. to "HERS Rater"). No insurance, years in business, reviews, prices, or ENERGY STAR (owner's choice).
 
 ## Structure
 - Astro, static output. Pages in src/pages, shared layout in src/layouts, facts in src/data.
