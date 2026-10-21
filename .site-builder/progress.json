@@ -39,6 +39,12 @@
     "4.1": { "status": "done", "evidence": "Unique titles/descriptions with approved phrases; one H1 each; HomeAndConstructionBusiness JSON-LD (no address/geo: service-area business, no street address in facts); sitemap via @astrojs/sitemap (10 URLs, thank-you excluded); robots.txt; canonicals; OG image (generated, replace with real photo when owner adds photos). scripts/lighthouse.mjs: 100/100/100/100 on 6 pages (mobile).", "at": "2026-10-21" },
     "4.2": { "status": "done", "evidence": "guide/steps/google-business-profile.html: name, category guidance, 679-char description, services, phone, URL, service area, hours note, review-request text. QR code pending profile (7.5).", "at": "2026-10-21" },
     "4.3": { "status": "done", "evidence": "IndexNow key file public/0ebb4d1b4939af7d8246a2d8a04b4bad.txt; scripts/indexnow.mjs. Only run after custom domain serves the site (Phase 6.7+), else key verification fails.", "at": "2026-10-21" },
+    "5.1": { "status": "done", "evidence": "GitHub secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID (re-set via gh secret set -f after CRLF issue). FORM key is public in src/data/form.ts, no secret needed.", "at": "2026-10-21" },
+    "5.2": { "status": "done", "evidence": "wrangler.jsonc: spokaneblowerdoors-site, assets ./dist, 404-page, workers_dev, preview_urls. Created workers.dev subdomain 'spokaneblowerdoors' (owner OK). Placeholder 'coming soon' deployed to create the Worker (versions upload requires existing Worker).", "at": "2026-10-21" },
+    "5.3": { "status": "done", "evidence": ".github/workflows/checks.yml (Build and check: build, astro check, check-pages, html-validate, lychee offline, Lighthouse 90+ on local preview; Preview link: wrangler versions upload --preview-alias pr-N + PR comment; Test the preview: Playwright vs preview). deploy.yml on push to main: build, check, wrangler deploy, IndexNow if vars.INDEXNOW_ENABLED. Used versions upload (stable) rather than open-beta `wrangler preview`.", "at": "2026-10-21" },
+    "5.4": { "status": "done", "evidence": "main protected: PR required (0 approvals), required checks Build and check / Preview link / Test the preview, enforce_admins, no force push/deletion. Config in .site-builder/branch-protection.json.", "at": "2026-10-21" },
+    "5.5": { "status": "done", "evidence": "Demo PR #3 (base launch) with /servicez link failed 'Build and check' via lychee: 'File not found'. Screenshot guide/steps/safety-net-failed.png. Closed unmerged, branch deleted.", "at": "2026-10-21" },
+    "5.6": { "status": "in_progress", "evidence": "Launch PR #2: all 3 checks green. Preview https://pr-2-spokaneblowerdoors-site.spokaneblowerdoors.workers.dev loads on owner's phone. Awaiting owner fact sign-off and merge.", "at": "2026-10-21" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [
@@ -51,6 +57,7 @@
     "2026-10-21: START_HERE.html referenced in SITE_BUILDER.md does not exist in the folder; owner started directly in Claude.",
     "2026-10-21: Project folder is C:\\Users\\annie\\Downloads\\My Website.",
     "2026-10-21: Domain has no email. Owner chose Gabriel@2ohairsolutions.com for accounts and form messages (step 1.1 answered).",
+    "2026-10-21: On Windows PowerShell 5.1, piping a value into `gh secret set` adds a trailing CR/LF. Set secrets with `gh secret set -f <tempfile.env>` (UTF-8 no BOM, LF) instead.",
     "2026-10-21: New shells need PATH refreshed from the registry to find git/node/gh until the app restarts."
   ]
 }
