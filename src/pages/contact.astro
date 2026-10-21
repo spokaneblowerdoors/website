@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { business } from '../data/business';
+import ContactForm from '../components/ContactForm.astro';
 ---
 <Base
   title="Contact | Spokane Blower Doors"
@@ -9,7 +10,7 @@ import { business } from '../data/business';
   <section class="section">
     <div class="wrap">
       <h1>Contact</h1>
-      <p class="lead">Testing is {business.hours.toLowerCase()}. {business.pricing}.</p>
+      <p class="lead">Service is {business.hours.toLowerCase()}. {business.pricing}.</p>
       <div class="contact-grid">
         <div class="card">
           <h2 style="font-size:1.25rem">Call</h2>
@@ -24,7 +25,8 @@ import { business } from '../data/business';
           <p>{business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
         </div>
       </div>
-      <!-- Contact form is added in Phase 3 (Web3Forms). -->
+      <h2 style="margin-top:48px">Send a message</h2>
+      <ContactForm />
     </div>
   </section>
 </Base>

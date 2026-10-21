@@ -4,14 +4,29 @@ import { business } from '../data/business';
 ---
 <Base
   title="Privacy Policy | Spokane Blower Doors"
-  description="How Spokane Blower Doors handles information on this website. No tracking cookies or advertising."
+  description="How Spokane Blower Doors handles information sent through this website. No tracking cookies, analytics or advertising."
 >
   <section class="section">
     <div class="wrap prose">
       <h1>Privacy Policy</h1>
+      <p class="lead">Last updated October 21, 2026.</p>
+
+      <h2>What this website collects</h2>
       <p>This website does not use tracking cookies, analytics or advertising.</p>
-      <p>If you call or email us, we use your information only to reply to you about your request.</p>
-      <p>Questions? Contact {business.name} at <a href={business.phoneHref}>{business.phone}</a> or <a href={`mailto:${business.email}`}>{business.email}</a>.</p>
+      <p>If you use the contact form, it collects what you type: your name, email address, phone number (optional) and your message.</p>
+
+      <h2>Where your message goes</h2>
+      <p>The contact form is delivered by Web3Forms, a form-delivery service, which emails your message to {business.name} at {business.email}.</p>
+      <p>Under its own <a href="https://web3forms.com/privacy">privacy policy</a>, Web3Forms may keep a copy of form messages for up to three years. To block spam, it may also check the sender's email address and IP address with spam-filtering services.</p>
+
+      <h2>How we use it</h2>
+      <p>If you contact us by form, phone or email, we use your information only to reply to you about your request. We don't sell it or share it for marketing.</p>
+
+      <h2>How long we keep it</h2>
+      <p>Your message stays in our email inbox. To ask us to delete it, contact us using the details below.</p>
+
+      <h2>Questions</h2>
+      <p>Contact {business.name} at <a href={business.phoneHref}>{business.phone}</a> or <a href={`mailto:${business.email}`}>{business.email}</a>.</p>
     </div>
   </section>
 </Base>

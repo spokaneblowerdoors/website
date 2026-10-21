@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+---
+<Base title="Message sent | Spokane Blower Doors" description="Thank you for contacting Spokane Blower Doors." noindex>
+  <section class="section">
+    <div class="wrap prose">
+      <h1>Thank you, your message was sent</h1>
+      <p class="lead">We'll reply to the email address you gave us.</p>
+      <p>If it's urgent, call <a href={business.phoneHref}>{business.phone}</a>.</p>
+      <p><a class="btn btn-secondary" href="/">Back to the home page</a></p>
+    </div>
+  </section>
+</Base>

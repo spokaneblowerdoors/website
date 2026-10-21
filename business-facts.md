@@ -40,6 +40,8 @@ Lines marked `UNCONFIRMED` are not approved yet.
 ## Privacy promises (approved by owner, 2026-10-21)
 - The website does not use tracking cookies, analytics or advertising. (Keep Cloudflare Web Analytics OFF.)
 - Information from calls/emails is used only to reply about the request.
+- Privacy Policy page text (form via Web3Forms, up to 3-year retention by Web3Forms, spam checks of email/IP, not sold or shared for marketing, deletion on request) approved by owner, 2026-10-21. Based on https://web3forms.com/privacy (last updated 13 Jul 2026).
+- Thank-you page: "We'll reply to the email address you gave us." (consistent with the reply promise above)
 
 ## Structured data category
 - schema.org type HomeAndConstructionBusiness (approved by owner, 2026-10-21)

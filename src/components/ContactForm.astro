@@ -1,0 +1,89 @@
+---
+import { business } from '../data/business';
+import { form } from '../data/form';
+---
+<form id="contact-form" class="contact-form" action={form.endpoint} method="POST" novalidate>
+  <input type="hidden" name="access_key" value={form.accessKey} />
+  <input type="hidden" name="subject" value={form.subject} />
+  <input type="hidden" name="from_name" value={form.fromName} />
+  <input type="hidden" name="redirect" value={`${business.url}/thank-you/`} />
+  <!-- Spam trap: people never see or tick this; robots often do. -->
+  <input type="checkbox" name="botcheck" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
+
+  <div class="field">
+    <label for="cf-name">Name <span aria-hidden="true">*</span></label>
+    <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err" />
+    <p class="error" id="cf-name-err" hidden>Please enter your name.</p>
+  </div>
+
+  <div class="field">
+    <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+    <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-err" />
+    <p class="error" id="cf-email-err" hidden>Please enter a valid email address, like name@example.com.</p>
+  </div>
+
+  <div class="field">
+    <label for="cf-phone">Phone <span class="optional">(optional)</span></label>
+    <input id="cf-phone" name="phone" type="tel" autocomplete="tel" />
+  </div>
+
+  <div class="field">
+    <label for="cf-message">Message <span aria-hidden="true">*</span></label>
+    <textarea id="cf-message" name="message" rows="6" required aria-describedby="cf-message-err cf-message-hint"></textarea>
+    <p class="hint" id="cf-message-hint">For example: project address, type of test, and when you need it.</p>
+    <p class="error" id="cf-message-err" hidden>Please enter a message.</p>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send message</button>
+  <p class="error" id="cf-send-err" role="alert" hidden>
+    Sorry, your message couldn't be sent. Please try again, or call <a href={business.phoneHref}>{business.phone}</a>.
+  </p>
+  <p class="fallback">Or call us at <a href={business.phoneHref}>{business.phone}</a>.</p>
+</form>
+
+<script>
+  const formEl = document.getElementById('contact-form') as HTMLFormElement;
+  const sendErr = document.getElementById('cf-send-err') as HTMLElement;
+  const button = formEl.querySelector('button[type=submit]') as HTMLButtonElement;
+  const fields = ['name', 'email', 'message'] as const;
+
+  function validate(): boolean {
+    let firstBad: HTMLElement | null = null;
+    for (const f of fields) {
+      const input = formEl.elements.namedItem(f) as HTMLInputElement | HTMLTextAreaElement;
+      const err = document.getElementById(`cf-${f}-err`) as HTMLElement;
+      const ok = input.value.trim() !== '' && input.checkValidity();
+      err.hidden = ok;
+      input.setAttribute('aria-invalid', String(!ok));
+      if (!ok && !firstBad) firstBad = input;
+    }
+    firstBad?.focus();
+    return !firstBad;
+  }
+
+  formEl.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    sendErr.hidden = true;
+    if (!validate()) return;
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    try {
+      const data = Object.fromEntries(new FormData(formEl));
+      delete (data as Record<string, unknown>).redirect;
+      const res = await fetch(formEl.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.success) throw new Error(json.message || `HTTP ${res.status}`);
+      window.location.href = '/thank-you/';
+    } catch {
+      sendErr.hidden = false;
+      button.disabled = false;
+      button.textContent = 'Send message';
+    }
+  });
+</script>

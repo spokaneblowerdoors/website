@@ -8,7 +8,7 @@ const base = process.argv[2] ?? 'http://localhost:4321';
 const pages = [
   '/', '/services/', '/services/blower-door-testing/', '/services/duct-leakage-testing/',
   '/services/washington-energy-code-compliance/',
-  '/services/home-energy-audits/', '/about/', '/contact/', '/privacy/', '/404.html',
+  '/services/home-energy-audits/', '/about/', '/contact/', '/thank-you/', '/privacy/', '/404.html',
 ];
 const sizes = [
   { name: 'phone', width: 375, height: 812 },
