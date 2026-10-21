@@ -12,6 +12,7 @@ import { business, services } from '../data/business';
       <p class="lead">Spokane Blower Doors provides building science and building performance testing.</p>
       <p>We work with {business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
       <h2>Services</h2>
+      <p><a href="/servicez/">DEMO: this link is deliberately broken</a></p>
       <ul>
         {services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.name}</a></li>)}
       </ul>
