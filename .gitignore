@@ -8,3 +8,4 @@ screenshots/
 .site-builder/audit/
 test-results/
 playwright-report/
+.site-builder/placeholder/

@@ -4,6 +4,7 @@ Nothing goes on the website unless it is in this file and the owner has approved
 Lines marked `UNCONFIRMED` are not approved yet.
 
 **Approved by the owner, Gabe Bell, on 2026-10-21** (everything above "Research notes").
+**Final pre-launch sign-off:** owner checked every fact on the live preview (PR #2) on his phone and confirmed all correct, 2026-10-21.
 
 ## Basics
 - Business name (everyday): Spokane Blower Doors (confirmed by owner, 2026-10-21)
