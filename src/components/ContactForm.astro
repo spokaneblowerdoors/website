@@ -8,7 +8,7 @@ import { form } from '../data/form';
   <input type="hidden" name="from_name" value={form.fromName} />
   <input type="hidden" name="redirect" value={`${business.url}/thank-you/`} />
   <!-- Spam trap: people never see or tick this; robots often do. -->
-  <input type="checkbox" name="botcheck" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true" />
+  <input type="checkbox" name="botcheck" class="trap" tabindex="-1" aria-hidden="true" />
 
   <p class="form-note">Fields marked <span aria-hidden="true">*</span><span class="visually-hidden">with an asterisk</span> are required.</p>
 

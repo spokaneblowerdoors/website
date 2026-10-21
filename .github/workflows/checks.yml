@@ -1,0 +1,107 @@
+# Safety net for every proposed change (pull request).
+# Plain scripts only; no AI involved. A red X here blocks merging.
+name: Checks
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build and check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Type check, page rules (title, description, canonical, one H1), HTML validation
+        run: npm run check
+      - name: Check every link between pages
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --offline --root-dir ${{ github.workspace }}/dist --index-files index.html --no-progress 'dist/**/*.html'
+          fail: true
+      - name: Lighthouse (all categories must be 90+)
+        run: |
+          npx playwright install chromium
+          npx astro preview --port 4321 &
+          for i in $(seq 1 30); do curl -sf http://localhost:4321/ >/dev/null && break; sleep 1; done
+          node scripts/lighthouse.mjs http://localhost:4321
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: dist
+          path: dist
+
+  preview:
+    name: Preview link
+    needs: build
+    # Secrets aren't available to pull requests from forks.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.upload.outputs.url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: dist
+          path: dist
+      - name: Upload preview version to Cloudflare (does not change the live site)
+        id: upload
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          alias="pr-${{ github.event.pull_request.number }}"
+          npx wrangler versions upload --preview-alias "$alias" --message "PR #${{ github.event.pull_request.number }}" | tee upload.log
+          url=$(grep -o 'https://'"$alias"'-[^ ]*workers\.dev' upload.log | head -1)
+          test -n "$url"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+      - name: Post the preview link on the pull request
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          URL: ${{ steps.upload.outputs.url }}
+        with:
+          script: |
+            const marker = '<!-- preview-link -->';
+            const body = `${marker}\n### 👀 Preview this change\n${process.env.URL}\n\nOpen it on your phone and computer. If it looks right and the checks are green, click **Merge pull request**.\n\n_Updated for commit ${context.payload.pull_request.head.sha.slice(0, 7)}._`;
+            const { owner, repo } = context.repo;
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number });
+            const existing = comments.find((c) => c.body?.includes(marker));
+            if (existing) await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number, body });
+
+  test-preview:
+    name: Test the preview
+    needs: preview
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Contact form tests against the preview (form service is intercepted)
+        env:
+          BASE_URL: ${{ needs.preview.outputs.url }}
+          CI: true
+        run: npx playwright test
