@@ -4,7 +4,7 @@
   "owner_name": "Gabe Bell",
   "business_name": "Spokane Blower Doors",
   "domain": "spokaneblowerdoors.com",
-  "current_step": "5.1",
+  "current_step": "6.1",
   "steps": {
     "0.1": { "status": "done", "evidence": "Windows 11 Home; Auto mode; git 2.55.0, node v24.20.0, npm 11.19.0, gh 2.103.0 installed via winget and verified.", "at": "2026-10-21" },
     "0.2": { "status": "done", "evidence": "Owner: business 'Spokane Blower Doors', domain spokaneblowerdoors.com at GoDaddy. RDAP confirms registrar GoDaddy.com, LLC; registered 2026-10-21, expires 2027-10-21. No existing website (GoDaddy parking A records).", "at": "2026-10-21" },
@@ -44,7 +44,8 @@
     "5.3": { "status": "done", "evidence": ".github/workflows/checks.yml (Build and check: build, astro check, check-pages, html-validate, lychee offline, Lighthouse 90+ on local preview; Preview link: wrangler versions upload --preview-alias pr-N + PR comment; Test the preview: Playwright vs preview). deploy.yml on push to main: build, check, wrangler deploy, IndexNow if vars.INDEXNOW_ENABLED. Used versions upload (stable) rather than open-beta `wrangler preview`.", "at": "2026-10-21" },
     "5.4": { "status": "done", "evidence": "main protected: PR required (0 approvals), required checks Build and check / Preview link / Test the preview, enforce_admins, no force push/deletion. Config in .site-builder/branch-protection.json.", "at": "2026-10-21" },
     "5.5": { "status": "done", "evidence": "Demo PR #3 (base launch) with /servicez link failed 'Build and check' via lychee: 'File not found'. Screenshot guide/steps/safety-net-failed.png. Closed unmerged, branch deleted.", "at": "2026-10-21" },
-    "5.6": { "status": "in_progress", "evidence": "Launch PR #2: all 3 checks green. Preview https://pr-2-spokaneblowerdoors-site.spokaneblowerdoors.workers.dev loads on owner's phone. Awaiting owner fact sign-off and merge.", "at": "2026-10-21" },
+    "5.6": { "status": "done", "evidence": "Owner signed off all facts on PR #2 preview (phone) and merged PR #2 at 2026-10-21T23:39:03Z. Deploy run 39694777834 success. https://spokaneblowerdoors-site.spokaneblowerdoors.workers.dev/ 200; /does-not-exist/ 404; sitemap and robots 200.", "at": "2026-10-21" },
+    "5.7": { "status": "done", "evidence": "Owner opened issue #4 with agent label; helper changed About sentence on branch claude/issue-4-... but left a 'Create PR' link (no npm permission, no PR). Owner closed the issue (test). Fix: ai-agent.yml allows npm ci/build/check + gh pr create; AGENTS.md says open PR yourself; preview link replaces screenshots. Owner approved this change; goes in via PR.", "at": "2026-10-21" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [

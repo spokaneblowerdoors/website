@@ -37,5 +37,8 @@
 - Never change MX, TXT, DKIM, or NS records, .github/workflows, or this file without the owner's approval.
 - Never create CLAUDE.md or other tool-specific instruction files; this file is the single source of agent instructions.
 - No tracking, cookies, or third-party embeds without approval.
-- Run the build and checks before opening a PR.
-- Every PR lists each factual claim changed and includes phone and desktop screenshots.
+- Run `npm ci`, `npm run build` and `npm run check` before opening a PR, and say in the PR whether they passed.
+- Open the pull request yourself (e.g. `gh pr create`) rather than leaving a "Create PR" link: the owner
+  should only have to review and click Merge.
+- Every PR lists each factual claim changed. For visual review, the automatic "Preview this change"
+  comment on the PR gives a live link the owner opens on phone and desktop (this replaces screenshots).
