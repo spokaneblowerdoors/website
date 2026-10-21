@@ -6,3 +6,5 @@ dist/
 .site-builder/gh-login.log
 screenshots/
 .site-builder/audit/
+test-results/
+playwright-report/
