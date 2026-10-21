@@ -4,7 +4,7 @@
   "owner_name": "Gabe Bell",
   "business_name": "Spokane Blower Doors",
   "domain": "spokaneblowerdoors.com",
-  "current_step": "2.1",
+  "current_step": "3.1",
   "steps": {
     "0.1": { "status": "done", "evidence": "Windows 11 Home; Auto mode; git 2.55.0, node v24.20.0, npm 11.19.0, gh 2.103.0 installed via winget and verified.", "at": "2026-10-21" },
     "0.2": { "status": "done", "evidence": "Owner: business 'Spokane Blower Doors', domain spokaneblowerdoors.com at GoDaddy. RDAP confirms registrar GoDaddy.com, LLC; registered 2026-10-21, expires 2027-10-21. No existing website (GoDaddy parking A records).", "at": "2026-10-21" },
@@ -29,7 +29,7 @@
     "2.6": { "status": "done", "evidence": "Pages: home, services index + 5 service pages, about, contact, privacy, 404. scripts/check-pages.mjs passes 11/11.", "at": "2026-10-21" },
     "2.7": { "status": "done", "evidence": "scripts/screenshots.mjs at 375/1280: no horizontal scroll, broken images or small tap targets. Fixed hidden mobile call buttons and lowercased names.", "at": "2026-10-21" },
     "2.8": { "status": "done", "evidence": "Independent subagent audit: no false claims; fixed area wording, removed founder/priceRange, 'energy code testing' overstatement. Owner approved service descriptions, privacy promises, schema type.", "at": "2026-10-21" },
-    "2.9": { "status": "in_progress", "evidence": "Draft shown in preview panel (astro preview localhost:4321).", "at": "2026-10-21" },
+    "2.9": { "status": "done", "evidence": "Owner asked for precise technical (building-science) voice; supplied standards (RESNET 380, 310, WSEC/IECC), metrics, Retrotec (calibrated), R406 worksheet; approved per-service mapping; said remove ENERGY STAR for now. Second independent audit run; all flags resolved or owner-approved. Owner: 'Looks great'. Commit 4066dd5.", "at": "2026-10-21" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [
