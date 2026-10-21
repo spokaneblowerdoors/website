@@ -4,7 +4,7 @@
   "owner_name": "Gabe Bell",
   "business_name": "Spokane Blower Doors",
   "domain": "spokaneblowerdoors.com",
-  "current_step": "4.1",
+  "current_step": "5.1",
   "steps": {
     "0.1": { "status": "done", "evidence": "Windows 11 Home; Auto mode; git 2.55.0, node v24.20.0, npm 11.19.0, gh 2.103.0 installed via winget and verified.", "at": "2026-10-21" },
     "0.2": { "status": "done", "evidence": "Owner: business 'Spokane Blower Doors', domain spokaneblowerdoors.com at GoDaddy. RDAP confirms registrar GoDaddy.com, LLC; registered 2026-10-21, expires 2027-10-21. No existing website (GoDaddy parking A records).", "at": "2026-10-21" },
@@ -21,6 +21,7 @@
     "1.7": { "status": "done", "evidence": "Chose Web3Forms (250/mo free vs Formspree 50/mo). Web3Forms now requires an account and asks for website URL (entered https://spokaneblowerdoors.com). FORM_ACCESS_KEY saved: 36-char UUID format.", "at": "2026-10-21" },
     "1.8": { "status": "done", "evidence": "Owner chose Claude Pro/Max subscription over API key. Installed Claude Code 2.1.302 via winget; ran `claude setup-token` in terminal tab. Token saved in .env.local as CLAUDE_CODE_OAUTH_TOKEN (108 chars, sk-ant-oat01- prefix). Use claude_code_oauth_token input in ai-agent.yml (not ANTHROPIC_API_KEY).", "at": "2026-10-21" },
     "1.9": { "status": "done", "evidence": "RDAP status: clientTransferProhibited (+delete/renew/update prohibited) = locked. Owner confirmed auto-renew On. No GoDaddy API key: nameserver switch in Phase 6 will be a guided owner step.", "at": "2026-10-21" },
+    "2.6b": { "status": "done", "evidence": "Owner added ERI scores service (ANSI/RESNET/ICC 301; BSI credential; WSEC/IECC ERI path). Owner asked to remove his name from site entirely. 12/12 pages pass; 0 name mentions. Commit 52c2750.", "at": "2026-10-21" },
     "2.1": { "status": "done", "evidence": "Owner chose public repo.", "at": "2026-10-21" },
     "2.2": { "status": "done", "evidence": "https://github.com/spokaneblowerdoors/website created public; main pushed. gh auth setup-git configured.", "at": "2026-10-21" },
     "2.3": { "status": "done", "evidence": "Claude GitHub app installed on org (repository_selection=selected). Secret CLAUDE_CODE_OAUTH_TOKEN set. .github/workflows/ai-agent.yml pinned to claude-code-action v1.0.256 (a5a423f); label_trigger=agent. Test issue #1 answered correctly, quoting AGENTS.md. Removed 'opened' trigger to avoid duplicate runs.", "at": "2026-10-21" },
@@ -35,6 +36,9 @@
     "3.3": { "status": "done", "evidence": "tests/contact-form.spec.ts: 3 tests x desktop+phone = 6 passed; endpoint intercepted. Note: Astro 7 allows one preview server; run locally with BASE_URL=http://localhost:4321 if one is already running.", "at": "2026-10-21" },
     "3.4": { "status": "done", "evidence": "Owner confirmed Web3Forms recipient is Gabriel@2ohairsolutions.com.", "at": "2026-10-21" },
     "3.5": { "status": "done", "evidence": "Privacy policy rewritten from Web3Forms' actual policy (3-year max retention, CleanTalk/Akismet spam checks); owner approved. Not legal advice.", "at": "2026-10-21" },
+    "4.1": { "status": "done", "evidence": "Unique titles/descriptions with approved phrases; one H1 each; HomeAndConstructionBusiness JSON-LD (no address/geo: service-area business, no street address in facts); sitemap via @astrojs/sitemap (10 URLs, thank-you excluded); robots.txt; canonicals; OG image (generated, replace with real photo when owner adds photos). scripts/lighthouse.mjs: 100/100/100/100 on 6 pages (mobile).", "at": "2026-10-21" },
+    "4.2": { "status": "done", "evidence": "guide/steps/google-business-profile.html: name, category guidance, 679-char description, services, phone, URL, service area, hours note, review-request text. QR code pending profile (7.5).", "at": "2026-10-21" },
+    "4.3": { "status": "done", "evidence": "IndexNow key file public/0ebb4d1b4939af7d8246a2d8a04b4bad.txt; scripts/indexnow.mjs. Only run after custom domain serves the site (Phase 6.7+), else key verification fails.", "at": "2026-10-21" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [

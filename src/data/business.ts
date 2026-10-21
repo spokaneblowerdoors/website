@@ -50,7 +50,7 @@ export const services: Service[] = [
       'Testing follows ANSI/RESNET/ICC 380 and the test procedures of the Washington State Energy Code (WSEC) and IECC.',
     ],
     reports: ['CFM50', 'ACH50', 'Written report or code form'],
-    title: 'Blower Door Test Spokane | New-Home Code Testing',
+    title: "Blower Door Test Spokane & Coeur d'Alene | New Homes",
     description:
       'Blower door testing for new homes per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. CFM50 and ACH50 reported. Call 509-903-8595.',
   },
@@ -76,9 +76,9 @@ export const services: Service[] = [
       'Credentialed through Building Science Institute (BSI).',
     ],
     reports: ['ERI / HERS Index score'],
-    title: 'ERI & HERS Index Scores | Spokane Blower Doors',
+    title: 'HERS Rating & ERI Scores Spokane | Spokane Blower Doors',
     description:
-      'ERI and HERS Index scores under ANSI/RESNET/ICC 301 for code compliance (WSEC, IECC), builder marketing and incentives. Call 509-903-8595.',
+      "HERS rating and ERI scores under ANSI/RESNET/ICC 301 in Spokane and Coeur d'Alene, for WSEC/IECC compliance and incentives. 509-903-8595.",
   },
   {
     slug: 'washington-energy-code-compliance',
