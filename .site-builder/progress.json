@@ -21,6 +21,15 @@
     "1.7": { "status": "done", "evidence": "Chose Web3Forms (250/mo free vs Formspree 50/mo). Web3Forms now requires an account and asks for website URL (entered https://spokaneblowerdoors.com). FORM_ACCESS_KEY saved: 36-char UUID format.", "at": "2026-10-21" },
     "1.8": { "status": "done", "evidence": "Owner chose Claude Pro/Max subscription over API key. Installed Claude Code 2.1.302 via winget; ran `claude setup-token` in terminal tab. Token saved in .env.local as CLAUDE_CODE_OAUTH_TOKEN (108 chars, sk-ant-oat01- prefix). Use claude_code_oauth_token input in ai-agent.yml (not ANTHROPIC_API_KEY).", "at": "2026-10-21" },
     "1.9": { "status": "done", "evidence": "RDAP status: clientTransferProhibited (+delete/renew/update prohibited) = locked. Owner confirmed auto-renew On. No GoDaddy API key: nameserver switch in Phase 6 will be a guided owner step.", "at": "2026-10-21" },
+    "2.1": { "status": "done", "evidence": "Owner chose public repo.", "at": "2026-10-21" },
+    "2.2": { "status": "done", "evidence": "https://github.com/spokaneblowerdoors/website created public; main pushed. gh auth setup-git configured.", "at": "2026-10-21" },
+    "2.3": { "status": "done", "evidence": "Claude GitHub app installed on org (repository_selection=selected). Secret CLAUDE_CODE_OAUTH_TOKEN set. .github/workflows/ai-agent.yml pinned to claude-code-action v1.0.256 (a5a423f); label_trigger=agent. Test issue #1 answered correctly, quoting AGENTS.md. Removed 'opened' trigger to avoid duplicate runs.", "at": "2026-10-21" },
+    "2.4": { "status": "done", "evidence": "Astro 7.4.2 static, @astrojs/sitemap 3.7.4, @astrojs/check 0.9.12 + typescript 6.0.3 (check doesn't support TS 7 yet). 11 pages build.", "at": "2026-10-21" },
+    "2.5": { "status": "done", "evidence": "AGENTS.md written; no CLAUDE.md.", "at": "2026-10-21" },
+    "2.6": { "status": "done", "evidence": "Pages: home, services index + 5 service pages, about, contact, privacy, 404. scripts/check-pages.mjs passes 11/11.", "at": "2026-10-21" },
+    "2.7": { "status": "done", "evidence": "scripts/screenshots.mjs at 375/1280: no horizontal scroll, broken images or small tap targets. Fixed hidden mobile call buttons and lowercased names.", "at": "2026-10-21" },
+    "2.8": { "status": "done", "evidence": "Independent subagent audit: no false claims; fixed area wording, removed founder/priceRange, 'energy code testing' overstatement. Owner approved service descriptions, privacy promises, schema type.", "at": "2026-10-21" },
+    "2.9": { "status": "in_progress", "evidence": "Draft shown in preview panel (astro preview localhost:4321).", "at": "2026-10-21" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [

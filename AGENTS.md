@@ -20,8 +20,10 @@
 - The owner, Gabe Bell, is non-technical. Explain everything in plain language, with no jargon.
 
 ## Voice
-- Straightforward and professional. Short sentences. No superlatives unless business-facts.md backs them.
-- No certifications, insurance, years in business, reviews, or prices on the site (owner's choice).
+- The owner is a building scientist: precise, technical, professional wording. Use correct standard
+  names and units (e.g. ANSI/RESNET/ICC 380, CFM50, ACH50). Never assign a standard or metric to a
+  service unless business-facts.md does. No superlatives unless business-facts.md backs them.
+- No certifications, insurance, years in business, reviews, prices, or ENERGY STAR on the site (owner's choice).
 
 ## Structure
 - Astro, static output. Pages in src/pages, shared layout in src/layouts, facts in src/data.

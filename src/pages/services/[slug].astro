@@ -16,7 +16,15 @@ const others = services.filter((s) => s.slug !== service.slug);
       <p class="breadcrumb"><a href="/services/">Services</a> / {service.name}</p>
       <h1>{service.name}</h1>
       <p class="lead">{service.short}</p>
-      <p>Spokane Blower Doors serves {business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+      {service.body.map((p) => <p>{p}</p>)}
+      {service.reports && (
+        <>
+          <h2>{service.slug === 'washington-energy-code-compliance' ? 'Deliverable' : 'Reported results'}</h2>
+          <ul>{service.reports.map((r) => <li>{r}</li>)}</ul>
+        </>
+      )}
+      <h2>Service area and scheduling</h2>
+      <p>Serving {service.slug === 'home-energy-audits' ? 'homeowners' : business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
       <p>Service is {business.hours.toLowerCase()}. {business.pricing}: <a href={business.phoneHref}>{business.phone}</a>.</p>
       <p><a class="btn btn-primary" href="/contact/">Ask about {service.name}</a></p>
     </div>

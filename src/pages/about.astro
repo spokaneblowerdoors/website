@@ -4,18 +4,27 @@ import { business, services } from '../data/business';
 ---
 <Base
   title="About | Spokane Blower Doors"
-  description="Spokane Blower Doors is run by Gabe Bell, offering blower door, duct leakage and energy code services in Eastern Washington and North Idaho."
+  description="Spokane Blower Doors, run by Gabe Bell: building science and building performance testing in Eastern Washington and North Idaho."
 >
   <section class="section">
     <div class="wrap prose">
       <h1>About Spokane Blower Doors</h1>
-      <p class="lead">Spokane Blower Doors is run by {business.owner}.</p>
-      <p>We work with {business.customersPhrase}. Our services:</p>
+      <p class="lead">Spokane Blower Doors provides building science and building performance testing. The business is run by {business.owner}.</p>
+      <p>We work with {business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+      <h2>Services</h2>
       <ul>
         {services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.name}</a></li>)}
       </ul>
-      <p>We work across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
-      <p>Testing is {business.hours.toLowerCase()}. To schedule or get a quote, call <a href={business.phoneHref}>{business.phone}</a> or <a href="/contact/">send a message</a>.</p>
+      <h2>Standards and methods</h2>
+      <ul>
+        {business.standards.map((s) => <li>{s}</li>)}
+      </ul>
+      <p>Testing is performed with calibrated {business.equipment} equipment.</p>
+      <h2>Reported results, as applicable</h2>
+      <ul>
+        {business.reporting.map((r) => <li>{r}</li>)}
+      </ul>
+      <p>Service is {business.hours.toLowerCase()}. To schedule or request a quote, call <a href={business.phoneHref}>{business.phone}</a> or <a href="/contact/">send a message</a>.</p>
     </div>
   </section>
 </Base>

@@ -14,12 +14,26 @@ export const business = {
   customers: ['Home builders', 'Homeowners', 'HVAC contractors', 'Remodelers'],
   customersPhrase: 'home builders, homeowners, HVAC contractors and remodelers',
   pricing: 'Call for a quote',
+  equipment: 'Retrotec',
+  standards: [
+    'ANSI/RESNET/ICC 380',
+    'ANSI/RESNET/ICC 310',
+    'Washington State Energy Code (WSEC) and IECC test procedures',
+  ],
+  reporting: [
+    'CFM50 and ACH50',
+    'Total duct leakage',
+    'Duct leakage to outside',
+    'Written report or code form',
+  ],
 };
 
 export type Service = {
   slug: string;
   name: string;
   short: string;
+  body: string[];
+  reports?: string[];
   title: string;
   description: string;
 };
@@ -30,40 +44,51 @@ export const services: Service[] = [
     slug: 'blower-door-testing',
     name: 'New-Home Code Tests',
     short: 'Blower door tests that new homes need to pass the energy code.',
+    body: [
+      'Whole-building airtightness testing for new construction, performed with calibrated Retrotec blower door equipment.',
+      'Testing follows ANSI/RESNET/ICC 380 and the test procedures of the Washington State Energy Code (WSEC) and IECC.',
+    ],
+    reports: ['CFM50', 'ACH50', 'Written report or code form'],
     title: 'Blower Door Test Spokane | New-Home Code Testing',
     description:
-      'Blower door testing for new homes in Spokane, Spokane Valley, Coeur d\'Alene and Post Falls. Call Spokane Blower Doors for a quote: 509-903-8595.',
+      'Blower door testing for new homes per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. CFM50 and ACH50 reported. Call 509-903-8595.',
   },
   {
     slug: 'duct-leakage-testing',
     name: 'Duct Leakage Tests',
     short: 'Measuring how much air leaks from heating and cooling ducts.',
+    body: [
+      'Duct system leakage testing with calibrated Retrotec equipment, following ANSI/RESNET/ICC 380 and WSEC/IECC test procedures.',
+      'Total duct leakage and/or duct leakage to outside are measured and reported, as the job requires.',
+    ],
+    reports: ['Total duct leakage', 'Duct leakage to outside', 'Written report or code form'],
     title: 'Duct Leakage Test Spokane | Spokane Blower Doors',
     description:
-      'Duct leakage testing for builders, HVAC contractors and homeowners in Eastern Washington and North Idaho. Call 509-903-8595 for a quote.',
+      'Duct leakage testing per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Eastern WA and North Idaho. Call 509-903-8595.',
   },
   {
     slug: 'washington-energy-code-compliance',
     name: 'Washington C3 Calculations',
     short: 'Showing a home complies with the Washington State Energy Code using the Washington points system.',
+    body: [
+      'Energy code compliance through the Washington State Energy Code points system.',
+      'The deliverable is a WSEC R406 energy credit worksheet.',
+    ],
+    reports: ['WSEC R406 energy credit worksheet'],
     title: 'Washington Energy Code Compliance | C3 Calculations',
     description:
-      'Washington C3 calculations: showing a home complies with the Washington State Energy Code using the points system. Call 509-903-8595.',
-  },
-  {
-    slug: 'energy-star-testing',
-    name: 'Energy Star Tests',
-    short: 'Testing for homes going through Energy Star.',
-    title: 'Energy Star Home Testing | Spokane Blower Doors',
-    description:
-      'Energy Star home testing in Spokane, Spokane Valley, Coeur d\'Alene and Post Falls. Call Spokane Blower Doors at 509-903-8595 for a quote.',
+      'Washington C3 calculations: WSEC compliance through the points system, delivered as a WSEC R406 energy credit worksheet. Call 509-903-8595.',
   },
   {
     slug: 'home-energy-audits',
     name: 'Home Energy Audits',
     short: 'For homeowners: finding drafts and air leaks.',
+    body: [
+      'Diagnostic testing for existing homes to locate drafts and air leakage, using calibrated Retrotec equipment.',
+    ],
+    reports: ['CFM50 and ACH50', 'Written report'],
     title: 'Home Energy Audit Spokane | Spokane Blower Doors',
     description:
-      'Home energy audits in Spokane, Spokane Valley, Coeur d\'Alene and Post Falls. Call Spokane Blower Doors at 509-903-8595 for a quote.',
+      'Home energy audits in Spokane, Spokane Valley, Coeur d\'Alene and Post Falls. Diagnostic testing to locate air leakage. Call 509-903-8595.',
   },
 ];
