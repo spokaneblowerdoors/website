@@ -1,0 +1,38 @@
+{
+  "os": "windows",
+  "permission_mode": "auto",
+  "owner_name": "Gabe Bell",
+  "business_name": "Spokane Blower Doors",
+  "domain": "spokaneblowerdoors.com",
+  "current_step": "2.1",
+  "steps": {
+    "0.1": { "status": "done", "evidence": "Windows 11 Home; Auto mode; git 2.55.0, node v24.20.0, npm 11.19.0, gh 2.103.0 installed via winget and verified.", "at": "2026-10-21" },
+    "0.2": { "status": "done", "evidence": "Owner: business 'Spokane Blower Doors', domain spokaneblowerdoors.com at GoDaddy. RDAP confirms registrar GoDaddy.com, LLC; registered 2026-10-21, expires 2027-10-21. No existing website (GoDaddy parking A records).", "at": "2026-10-21" },
+    "0.3": { "status": "done", "evidence": "Web search found no existing web presence; business-facts.md drafted.", "at": "2026-10-21" },
+    "0.4": { "status": "done", "evidence": "DoH lookup: no MX, no TXT. NS ns35/ns36.domaincontrol.com (GoDaddy). No email on the domain yet.", "at": "2026-10-21" },
+    "0.5": { "status": "done", "evidence": "Intake complete: contact, services, area, towns, customers, hours, prices, credentials, testimonials, look, search phrases, exclusions.", "at": "2026-10-21" },
+    "0.6": { "status": "waiting_on_owner", "evidence": "photos/ folder created and guide shown; owner chose 'later'.", "at": "2026-10-21" },
+    "1.1": { "status": "done", "evidence": "Account email: Gabriel@2ohairsolutions.com.", "at": "2026-10-21" },
+    "1.2": { "status": "done", "evidence": "Owner uses Google Password Manager.", "at": "2026-10-21" },
+    "1.3": { "status": "done", "evidence": "GitHub org spokaneblowerdoors exists (API, created 2026-10-21T21:45:36Z).", "at": "2026-10-21" },
+    "1.4": { "status": "done", "evidence": "gh auth status: logged in as 2OH-air77, scopes gist/read:org/repo/workflow; admin of spokaneblowerdoors.", "at": "2026-10-21" },
+    "1.5": { "status": "done", "evidence": "Owner reports Cloudflare account created with 2FA; to be confirmed via API once token verifies.", "at": "2026-10-21" },
+    "1.6": { "status": "done", "evidence": "User token cfut_ (53 chars) verify=active; account 'Gabriel@2ohairsolutions.com's Account' id aad4c495004955e606afa1830ca93e46 saved to .env.local; /zones and /workers/scripts reachable. Earlier pastes were 2FA backup codes then Global API Key (cfk_) - both removed from file. Read(.env.local) deny rule removed with owner's permission.", "at": "2026-10-21" },
+    "1.7": { "status": "done", "evidence": "Chose Web3Forms (250/mo free vs Formspree 50/mo). Web3Forms now requires an account and asks for website URL (entered https://spokaneblowerdoors.com). FORM_ACCESS_KEY saved: 36-char UUID format.", "at": "2026-10-21" },
+    "1.8": { "status": "done", "evidence": "Owner chose Claude Pro/Max subscription over API key. Installed Claude Code 2.1.302 via winget; ran `claude setup-token` in terminal tab. Token saved in .env.local as CLAUDE_CODE_OAUTH_TOKEN (108 chars, sk-ant-oat01- prefix). Use claude_code_oauth_token input in ai-agent.yml (not ANTHROPIC_API_KEY).", "at": "2026-10-21" },
+    "1.9": { "status": "done", "evidence": "RDAP status: clientTransferProhibited (+delete/renew/update prohibited) = locked. Owner confirmed auto-renew On. No GoDaddy API key: nameserver switch in Phase 6 will be a guided owner step.", "at": "2026-10-21" },
+    "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
+  },
+  "waiting_on_owner": [
+    "0.6: add photos to the photos folder",
+    "1.8 follow-up: the FIRST setup-token (the older of two) was exposed in the chat transcript when Claude closed terminal tab c1. Unused. Owner should revoke it from Claude account settings if possible.",
+    "Owner should close terminal tab c2 themselves (Claude must not close it: the close tool returns screen text containing the token)."
+  ],
+  "waiting_on_external": [],
+  "notes": [
+    "2026-10-21: START_HERE.html referenced in SITE_BUILDER.md does not exist in the folder; owner started directly in Claude.",
+    "2026-10-21: Project folder is C:\\Users\\annie\\Downloads\\My Website.",
+    "2026-10-21: Domain has no email. Owner chose Gabriel@2ohairsolutions.com for accounts and form messages (step 1.1 answered).",
+    "2026-10-21: New shells need PATH refreshed from the registry to find git/node/gh until the app restarts."
+  ]
+}

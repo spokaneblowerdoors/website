@@ -1,0 +1,6 @@
+.env.local
+guide/
+node_modules/
+dist/
+.astro/
+.site-builder/gh-login.log

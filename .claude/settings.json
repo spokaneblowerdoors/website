@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "PowerShell(npm *)",
+      "PowerShell(npx astro *)",
+      "PowerShell(npx wrangler *)",
+      "PowerShell(npx playwright *)",
+      "PowerShell(node *)",
+      "PowerShell(git *)",
+      "PowerShell(gh *)",
+      "Bash(npm *)",
+      "Bash(npx astro *)",
+      "Bash(npx wrangler *)",
+      "Bash(npx playwright *)",
+      "Bash(node *)",
+      "Bash(git *)",
+      "Bash(gh *)"
+    ],
+    "deny": [
+      "PowerShell(git push --force*)",
+      "PowerShell(git push -f*)",
+      "PowerShell(gh repo delete*)",
+      "PowerShell(npx wrangler delete*)",
+      "PowerShell(rm -rf *)",
+      "PowerShell(Remove-Item -Recurse *)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(gh repo delete*)",
+      "Bash(npx wrangler delete*)",
+      "Bash(rm -rf *)"
+    ]
+  }
+}
