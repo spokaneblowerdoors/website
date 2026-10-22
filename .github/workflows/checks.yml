@@ -27,6 +27,8 @@ jobs:
       - run: npm run build
       - name: Type check, page rules (title, description, canonical, one H1), HTML validation
         run: npm run check
+      - name: Redirect rules (www and http:// go to https://spokaneblowerdoors.com)
+        run: npm run test:worker
       - name: Check every link between pages
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:

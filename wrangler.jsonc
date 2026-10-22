@@ -1,13 +1,21 @@
-// Cloudflare Workers hosting for spokaneblowerdoors.com (static files only, no server code).
-// Docs: https://developers.cloudflare.com/workers/static-assets/
+// Cloudflare Workers hosting for spokaneblowerdoors.com.
+// Static files from dist/, with a tiny script (src/worker.js) that redirects www and http:// to
+// https://spokaneblowerdoors.com. Docs: https://developers.cloudflare.com/workers/static-assets/
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "spokaneblowerdoors-site",
+  "main": "src/worker.js",
   "compatibility_date": "2026-10-21",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": true
   },
+  "routes": [
+    { "pattern": "spokaneblowerdoors.com", "custom_domain": true },
+    { "pattern": "www.spokaneblowerdoors.com", "custom_domain": true }
+  ],
   "workers_dev": true,
   "preview_urls": true,
   "observability": { "enabled": false }

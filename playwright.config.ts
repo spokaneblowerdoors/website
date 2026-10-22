@@ -5,6 +5,7 @@ const baseURL = process.env.BASE_URL ?? 'http://localhost:4322';
 
 export default defineConfig({
   testDir: 'tests',
+  testMatch: '**/*.spec.ts',
   reporter: process.env.CI ? 'github' : 'list',
   use: { baseURL },
   projects: [
