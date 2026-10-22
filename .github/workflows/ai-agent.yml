@@ -30,12 +30,21 @@ jobs:
       id-token: write
       actions: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 1
+
+      # So the helper can build and check the site before opening a pull request.
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
 
       # Pinned to v1.0.256 by commit for safety; update deliberately.
       - uses: anthropics/claude-code-action@a5a423f75c251dcbff8a74e99f83b2cb03c72bfa
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           label_trigger: agent
+          # Only these extra commands are allowed: install, build, check, and opening/viewing PRs.
+          claude_args: >-
+            --allowedTools "Bash(npm ci),Bash(npm run build),Bash(npm run check),Bash(gh pr create:*),Bash(gh pr view:*),Bash(gh pr list:*)"
