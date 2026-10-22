@@ -9,3 +9,4 @@ screenshots/
 test-results/
 playwright-report/
 .site-builder/placeholder/
+.wrangler/
