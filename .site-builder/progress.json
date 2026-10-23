@@ -60,15 +60,21 @@
     "7.5": { "status": "waiting_on_external", "evidence": "Owner created Google Business Profile as service-area business using guide/steps/google-business-profile.html; waiting on Google verification. After: add review link to template + QR code.", "at": "2026-10-22" },
     "7.6": { "status": "done", "evidence": "Owner imported site into Bing Webmaster Tools from Google Search Console.", "at": "2026-10-22" },
     "7.7": { "status": "done", "evidence": "guide/launch.html shown.", "at": "2026-10-22" },
-    "6.8": { "status": "not_started", "evidence": "DNSSEC: enable in Cloudflare and add DS at GoDaddy on/after 2026-10-22 (a day after the switch).", "at": "2026-10-22" },
+    "6.8": { "status": "done", "evidence": "DNSSEC enabled via API; owner added DS (2371/13/2/EC94...70A9) at GoDaddy. RDAP delegationSigned=true; Google DoH AD=true; Cloudflare status active.", "at": "2026-10-22" },
+    "8.1": { "status": "done", "evidence": ".github/workflows/health.yml: uptime every 15 min (scripts/uptime-check.mjs), weekly launch-check.mjs (+DNSSEC, domain expiry, Web3Forms reachability, no-analytics), monthly lychee live + Lighthouse, quarterly reminder issues. scripts/health-issue.sh opens/comments/auto-closes 'health-alert' issues. Labels health-alert, reminder created.", "at": "2026-10-22" },
+    "8.2": { "status": "done", "evidence": ".github/dependabot.yml (npm + actions monthly); dependabot-automerge.yml: semver-patch only + visible-text diff, gh pr merge --auto. Repo allow_auto_merge + delete_branch_on_merge on. Dependabot secrets CLOUDFLARE_API_TOKEN/ACCOUNT_ID set.", "at": "2026-10-22" },
+    "8.3": { "status": "waiting_on_owner", "evidence": "Narrow token guide made; owner created 'website deploy (narrow)' but pasted the curl test command; then left the page and chose to skip. Broad token still in use.", "at": "2026-10-22" },
+    "8.4": { "status": "done", "evidence": "guide/handbook.html + guide/Website-Owners-Handbook.pdf (5 pages) + guide/Website-Quick-Card.pdf (1 page).", "at": "2026-10-22" },
+    "8.5": { "status": "done", "evidence": "OPERATIONS.md written from live API state. Fresh subagent (read only AGENTS.md + OPERATIONS.md) answered switch-agent, rollback, DNS protection/DNSSEC order, token rotation, add-a-town, analytics-alert correctly; gaps fixed: rollback via deployments list, DNSSEC 48h move order, 3-place token update with PS commands, Copilot is assignment-based, command limits, maintainer access, owner-fact approval rule, .nvmrc, renewal reminders.", "at": "2026-10-22" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [
+    "8.3: finish narrower Cloudflare token ('website deploy (narrow)' created but value not captured; owner skipped 2026-10-22). Then update GitHub + Dependabot secrets and delete the old broad token.",
     "0.6: add photos to the photos folder",
     "1.8 follow-up: the FIRST setup-token (the older of two) was exposed in the chat transcript when Claude closed terminal tab c1. Unused. Owner should revoke it from Claude account settings if possible.",
     "Owner should close terminal tab c2 themselves (Claude must not close it: the close tool returns screen text containing the token)."
   ],
-  "waiting_on_external": ["6.8: DNSSEC can be enabled from 2026-10-22 on (NS switched 2026-10-21)", "7.5: Google Business Profile verification"],
+  "waiting_on_external": ["7.5: Google Business Profile verification (then add review link + QR code)"],
   "notes": [
     "2026-10-21: START_HERE.html referenced in SITE_BUILDER.md does not exist in the folder; owner started directly in Claude.",
     "2026-10-21: Project folder is C:\\Users\\annie\\Downloads\\My Website.",

@@ -1,4 +1,5 @@
-// Live-site launch check: DNS, redirects, SSL, key files, structured data.
+// Live-site check: DNS, DNSSEC, redirects, SSL, key files, structured data, no analytics,
+// domain expiry, form service. Used at launch and weekly by .github/workflows/health.yml.
 // Usage: node scripts/launch-check.mjs   (prints a Markdown report; exits 1 if anything fails)
 import tls from 'node:tls';
 
@@ -76,6 +77,24 @@ ok('Structured data (JSON-LD) parses', !!parsed && parsed['@type'] === 'HomeAndC
 ok('Canonical is https apex', /<link rel="canonical" href="https:\/\/spokaneblowerdoors\.com\/"/.test(html));
 // The Privacy Policy promises no analytics; Cloudflare can auto-inject its Web Analytics beacon.
 ok('No analytics/tracking scripts injected (privacy promise)', !/cloudflareinsights|googletagmanager|google-analytics|gtag\(/.test(html));
+
+// DNSSEC (enabled 2026-10-22: Cloudflare signs, DS key tag 2371 at the registry)
+const signed = await (await fetch(`https://dns.google/resolve?name=${HOST}&type=A&do=1`)).json();
+ok('DNSSEC validates (Google resolver)', signed.Status === 0 && signed.AD === true, `status ${signed.Status}, AD ${signed.AD}`);
+
+// Domain registration expiry (registered at GoDaddy, auto-renew on)
+const rdap = await (await fetch(`https://rdap.verisign.com/com/v1/domain/${HOST}`)).json();
+const exp = rdap.events?.find((e) => e.eventAction === 'expiration')?.eventDate;
+const expDays = exp ? Math.round((new Date(exp) - Date.now()) / 86400000) : -1;
+ok('Domain registration not expiring within 30 days', expDays > 30, exp ? `expires ${exp.slice(0, 10)} (${expDays} days)` : 'unknown');
+
+// Contact form service reachable. Web3Forms blocks bots, so any non-5xx answer means "up".
+try {
+  const f = await fetch('https://api.web3forms.com/submit', { method: 'GET' });
+  ok('Contact form service (Web3Forms) reachable', f.status < 500, `HTTP ${f.status}`);
+} catch (e) {
+  ok('Contact form service (Web3Forms) reachable', false, e.message);
+}
 
 // Report
 const failed = results.filter((r) => !r.pass);
