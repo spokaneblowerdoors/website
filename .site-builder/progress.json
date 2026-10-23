@@ -4,7 +4,7 @@
   "owner_name": "Gabe Bell",
   "business_name": "Spokane Blower Doors",
   "domain": "spokaneblowerdoors.com",
-  "current_step": "6.1",
+  "current_step": "8.1",
   "steps": {
     "0.1": { "status": "done", "evidence": "Windows 11 Home; Auto mode; git 2.55.0, node v24.20.0, npm 11.19.0, gh 2.103.0 installed via winget and verified.", "at": "2026-10-21" },
     "0.2": { "status": "done", "evidence": "Owner: business 'Spokane Blower Doors', domain spokaneblowerdoors.com at GoDaddy. RDAP confirms registrar GoDaddy.com, LLC; registered 2026-10-21, expires 2027-10-21. No existing website (GoDaddy parking A records).", "at": "2026-10-21" },
@@ -46,6 +46,21 @@
     "5.5": { "status": "done", "evidence": "Demo PR #3 (base launch) with /servicez link failed 'Build and check' via lychee: 'File not found'. Screenshot guide/steps/safety-net-failed.png. Closed unmerged, branch deleted.", "at": "2026-10-21" },
     "5.6": { "status": "done", "evidence": "Owner signed off all facts on PR #2 preview (phone) and merged PR #2 at 2026-10-21T23:39:03Z. Deploy run 39694777834 success. https://spokaneblowerdoors-site.spokaneblowerdoors.workers.dev/ 200; /does-not-exist/ 404; sitemap and robots 200.", "at": "2026-10-21" },
     "5.7": { "status": "done", "evidence": "Owner opened issue #4 with agent label; helper changed About sentence on branch claude/issue-4-... but left a 'Create PR' link (no npm permission, no PR). Owner closed the issue (test). Fix: ai-agent.yml allows npm ci/build/check + gh pr create; AGENTS.md says open PR yourself; preview link replaces screenshots. Owner approved this change; goes in via PR.", "at": "2026-10-21" },
+    "6.1": { "status": "done", "evidence": "dns-snapshot-before.txt (DoH via Cloudflare + Google): A parked x2, CNAME www->apex, _domainconnect CNAME, _dmarc TXT (GoDaddy default p=quarantine), NS ns35/36.domaincontrol.com, no MX, no DKIM, no CAA, no DNSSEC.", "at": "2026-10-21" },
+    "6.2": { "status": "done", "evidence": "Owner screenshot of GoDaddy DNS (7 records) matches snapshot. (First screenshot was washingtonblowerdoors.com by mistake; owner has that domain too.)", "at": "2026-10-21" },
+    "6.3": { "status": "done", "evidence": "Zone created via API: id 73518b99fcb306f89e72604d06599511, Free plan, NS kelly/pedro.ns.cloudflare.com. jump_start imported 0 records.", "at": "2026-10-21" },
+    "6.4": { "status": "done", "evidence": "Owner approved table. Added _dmarc TXT and _domainconnect CNAME (DNS-only). Parked A / www CNAME not copied; replaced by Worker custom domains.", "at": "2026-10-21" },
+    "6.5": { "status": "done", "evidence": "Owner said 'Yes, switch now' and changed NS at GoDaddy. RDAP registry shows KELLY/PEDRO.NS.CLOUDFLARE.COM. DNSSEC confirmed off beforehand.", "at": "2026-10-21" },
+    "6.6": { "status": "done", "evidence": "Zone status active within minutes. Some resolvers still caching old NS during propagation (normal).", "at": "2026-10-21" },
+    "6.7": { "status": "done", "evidence": "PR #6 merged 2026-10-22T00:08:45Z: custom domains apex + www, src/worker.js one-hop 301 (www/http -> https apex), tests/worker.test.mjs in Checks. Deploy run 39697893098 success. Verified: https apex 200, 404 page 404, sitemap/robots/IndexNow key 200, http and www -> single 301. IndexNow 202 for 10 URLs; repo var INDEXNOW_ENABLED=true.", "at": "2026-10-22" },
+    "7.1": { "status": "done", "evidence": "launch-check.mjs all passed; Lighthouse live 96-100; live screenshots OK; report in issue #7 (closed as record). FOUND: Cloudflare Web Analytics auto-enabled (RUM beacon injected) contradicting privacy promise; API token lacks permission (403); owner disabled automatic setup in dashboard; verified beacon gone. Added no-analytics check to launch-check.mjs.", "at": "2026-10-22" },
+    "7.2": { "status": "skipped", "evidence": "No email on the domain (no MX before or after). DMARC preserved.", "at": "2026-10-22" },
+    "7.3": { "status": "done", "evidence": "Owner's first phone submission didn't arrive; second showed thank-you page and arrived in inbox. Headless Playwright submissions to Web3Forms are blocked (CORS/bot protection on api.web3forms.com), so live form delivery can't be tested by bots; owner declined an agent test submission.", "at": "2026-10-22" },
+    "7.4": { "status": "done", "evidence": "Owner added Domain property; TXT google-site-verification=zqPu...dm1Y added via Cloudflare API (visible on Cloudflare and Google DoH); owner verified and submitted sitemap-index.xml.", "at": "2026-10-22" },
+    "7.5": { "status": "waiting_on_external", "evidence": "Owner created Google Business Profile as service-area business using guide/steps/google-business-profile.html; waiting on Google verification. After: add review link to template + QR code.", "at": "2026-10-22" },
+    "7.6": { "status": "done", "evidence": "Owner imported site into Bing Webmaster Tools from Google Search Console.", "at": "2026-10-22" },
+    "7.7": { "status": "done", "evidence": "guide/launch.html shown.", "at": "2026-10-22" },
+    "6.8": { "status": "not_started", "evidence": "DNSSEC: enable in Cloudflare and add DS at GoDaddy on/after 2026-10-22 (a day after the switch).", "at": "2026-10-22" },
     "0.7": { "status": "done", "evidence": "Owner approved business-facts.md via guide/steps/0.7-approve-facts.html.", "at": "2026-10-21" }
   },
   "waiting_on_owner": [
@@ -53,7 +68,7 @@
     "1.8 follow-up: the FIRST setup-token (the older of two) was exposed in the chat transcript when Claude closed terminal tab c1. Unused. Owner should revoke it from Claude account settings if possible.",
     "Owner should close terminal tab c2 themselves (Claude must not close it: the close tool returns screen text containing the token)."
   ],
-  "waiting_on_external": [],
+  "waiting_on_external": ["6.8: DNSSEC can be enabled from 2026-10-22 on (NS switched 2026-10-21)", "7.5: Google Business Profile verification"],
   "notes": [
     "2026-10-21: START_HERE.html referenced in SITE_BUILDER.md does not exist in the folder; owner started directly in Claude.",
     "2026-10-21: Project folder is C:\\Users\\annie\\Downloads\\My Website.",
