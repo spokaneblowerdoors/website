@@ -24,7 +24,7 @@ const others = services.filter((s) => s.slug !== service.slug);
         </>
       )}
       <h2>Service area and scheduling</h2>
-      <p>Serving {service.slug === 'home-energy-audits' ? 'homeowners' : business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+      <p>Serving {service.slug === 'home-energy-audits' ? 'homeowners' : business.customersPhrase} across {business.serviceArea}.</p>
       <p>Service is {business.hours.toLowerCase()}. {business.pricing}: <a href={business.phoneHref}>{business.phone}</a>.</p>
       <p><a class="btn btn-primary" href="/contact/">Ask about {service.name}</a></p>
     </div>

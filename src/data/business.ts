@@ -8,8 +8,7 @@ export const business = {
   email: 'Gabriel@2ohairsolutions.com',
   url: 'https://spokaneblowerdoors.com',
   hours: 'By appointment',
-  serviceArea: 'Eastern Washington and North Idaho',
-  towns: ['Spokane', 'Spokane Valley', "Coeur d'Alene", 'Post Falls'],
+  serviceArea: 'North Idaho and Eastern Washington',
   customers: ['Home builders', 'Homeowners', 'HVAC contractors', 'Remodelers'],
   customersPhrase: 'home builders, homeowners, HVAC contractors and remodelers',
   pricing: 'Call for a quote',
@@ -43,7 +42,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: 'blower-door-testing',
-    name: 'New-Home Code Tests',
+    name: 'New-Home Code Compliance Tests',
     short: 'Blower door tests that new homes need to pass the energy code.',
     body: [
       'Whole-building airtightness testing for new construction, performed with calibrated Retrotec blower door equipment.',
@@ -57,7 +56,7 @@ export const services: Service[] = [
   {
     slug: 'duct-leakage-testing',
     name: 'Duct Leakage Tests',
-    short: 'Measuring how much air leaks from heating and cooling ducts.',
+    short: 'Measuring how much air leaks from your HVAC system.',
     body: [
       'Duct system leakage testing with calibrated Retrotec equipment, following ANSI/RESNET/ICC 380 and WSEC/IECC test procedures.',
       'Total duct leakage and/or duct leakage to outside are measured and reported, as the job requires.',
@@ -65,7 +64,7 @@ export const services: Service[] = [
     reports: ['Total duct leakage', 'Duct leakage to outside', 'Written report or code form'],
     title: 'Duct Leakage Test Spokane | Spokane Blower Doors',
     description:
-      'Duct leakage testing per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Eastern WA and North Idaho. Call 509-903-8595.',
+      'Duct leakage testing per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. North Idaho and Eastern Washington. Call 509-903-8595.',
   },
   {
     slug: 'eri-scores',
@@ -78,7 +77,7 @@ export const services: Service[] = [
     reports: ['ERI / HERS Index score'],
     title: 'HERS Rating & ERI Scores Spokane | Spokane Blower Doors',
     description:
-      "HERS rating and ERI scores under ANSI/RESNET/ICC 301 in Spokane and Coeur d'Alene, for WSEC/IECC compliance and incentives. 509-903-8595.",
+      "HERS rating and ERI scores under ANSI/RESNET/ICC 301 for WSEC/IECC compliance and incentives. 509-903-8595.",
   },
   {
     slug: 'washington-energy-code-compliance',
@@ -98,11 +97,11 @@ export const services: Service[] = [
     name: 'Home Energy Audits',
     short: 'For homeowners: finding drafts and air leaks.',
     body: [
-      'Diagnostic testing for existing homes to locate drafts and air leakage, using calibrated Retrotec equipment.',
+      'Diagnostic testing for existing homes to locate drafts and air leakage, using calibrated Retrotec equipment, thermal imaging and smoke guns.',
     ],
     reports: ['CFM50 and ACH50', 'Written report'],
     title: 'Home Energy Audit Spokane | Spokane Blower Doors',
     description:
-      'Home energy audits in Spokane, Spokane Valley, Coeur d\'Alene and Post Falls. Diagnostic testing to locate air leakage. Call 509-903-8595.',
+      'Home energy audits in North Idaho and Eastern Washington. Diagnostic testing to locate air leakage. Call 509-903-8595.',
   },
 ];

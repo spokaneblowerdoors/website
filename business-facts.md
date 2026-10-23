@@ -13,13 +13,13 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Owner name: Gabe Bell (confirmed by owner, 2026-10-21)
 - Phone: 509-903-8595 (confirmed by owner, 2026-10-21)
 - Email for website messages and accounts: Gabriel@2ohairsolutions.com (confirmed by owner, 2026-10-21)
-- Service area: Eastern Washington and North Idaho (confirmed by owner, 2026-10-21)
+- Service area: North Idaho and Eastern Washington (confirmed by owner, 2026-10-21; wording order and no town list per owner, 2026-10-23, issue #11)
 
 ## Hours
 - By appointment (confirmed by owner, 2026-10-21)
 
 ## Services on the site (owner, 2026-10-21)
-- New-home code tests
+- New-home code compliance tests (owner, 2026-10-23, issue #11; renamed from "New-home code tests")
 - Duct leakage tests
 - Washington C3 calculations
 - Home energy audits
@@ -27,10 +27,10 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - (Energy Star tests: owner offers these but said "don't mention Energy Star for now", 2026-10-21. Keep ENERGY STAR off the site entirely until the owner says otherwise.)
 
 ## Service descriptions and details shown on the site (approved by owner, 2026-10-21)
-- New-home code tests: "Blower door tests that new homes need to pass the energy code." Whole-building airtightness testing for new construction. Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: CFM50, ACH50, written report or code form.
-- Duct leakage tests: "Measuring how much air leaks from heating and cooling ducts." Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: total duct leakage and/or duct leakage to outside, as the job requires; written report or code form.
+- New-home code compliance tests: "Blower door tests that new homes need to pass the energy code." Whole-building airtightness testing for new construction. Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: CFM50, ACH50, written report or code form.
+- Duct leakage tests: "Measuring how much air leaks from your HVAC system." (owner, 2026-10-23, issue #11) Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: total duct leakage and/or duct leakage to outside, as the job requires; written report or code form.
 - Washington C3 calculations: "Showing a home complies with the Washington State Energy Code using the Washington points system." Deliverable: WSEC R406 energy credit worksheet.
-- Home energy audits: "For homeowners: finding drafts and air leaks." Diagnostic testing for existing homes to locate drafts and air leakage. Results: CFM50 and ACH50, written report.
+- Home energy audits: "For homeowners: finding drafts and air leaks." Diagnostic testing for existing homes to locate drafts and air leakage. Uses thermal imaging and smoke guns (owner, 2026-10-23, issue #11). Results: CFM50 and ACH50, written report.
 
 ## Technical details (owner, 2026-10-21)
 - Voice: building scientists; precise, technical wording.
@@ -56,8 +56,8 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Do NOT name the owner or any individual on the site: owner finds it unprofessional and is not the only rater (owner, 2026-10-21). Speak as the business ("we").
 - No other certifications, insurance, or experience length on the site (owner, 2026-10-21).
 
-## Towns to mention (owner, 2026-10-21)
-- Spokane, Spokane Valley, Coeur d'Alene, Post Falls
+## Towns to mention
+- None. Owner asked to remove the town list and say only "North Idaho and Eastern Washington" (owner, 2026-10-23, issue #11).
 
 ## Customers (owner, 2026-10-21)
 - Home builders, homeowners, HVAC contractors, remodelers (home energy audits: homeowners)

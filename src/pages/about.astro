@@ -10,7 +10,7 @@ import { business, services } from '../data/business';
     <div class="wrap prose">
       <h1>About Spokane Blower Doors</h1>
       <p class="lead">Spokane Blower Doors provides building science and building performance testing.</p>
-      <p>We work with {business.customersPhrase} across {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+      <p>We work with {business.customersPhrase} across {business.serviceArea}.</p>
       <h2>Services</h2>
       <ul>
         {services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.name}</a></li>)}
