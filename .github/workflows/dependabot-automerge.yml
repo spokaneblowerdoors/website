@@ -1,0 +1,42 @@
+# Auto-merges ONLY Dependabot patch updates, and only after every required check passes
+# (branch protection enforces that). It also refuses if the built site's visible text changed.
+# Minor/major updates and anything not from Dependabot always wait for the owner.
+name: Dependabot auto-merge
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - id: meta
+        uses: dependabot/fetch-metadata@25dd0e34f4fe68f24cc83900b1fe3fe149efef98 # v3.1.0
+      - name: Stop unless this is a patch update
+        if: steps.meta.outputs.update-type != 'version-update:semver-patch'
+        run: echo "Not a patch update; leaving it for the owner." && exit 0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        if: steps.meta.outputs.update-type == 'version-update:semver-patch'
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        if: steps.meta.outputs.update-type == 'version-update:semver-patch'
+        with:
+          node-version: 24
+      - name: Confirm no visible text changes
+        if: steps.meta.outputs.update-type == 'version-update:semver-patch'
+        run: |
+          text() { find dist -name '*.html' | sort | xargs cat | sed -e 's/<[^>]*>/ /g' | tr -s ' \n' | grep -v '_astro'; }
+          git checkout -q "${{ github.event.pull_request.base.sha }}" && npm ci --silent && npm run build --silent && text > /tmp/before.txt
+          git checkout -q "${{ github.event.pull_request.head.sha }}" && npm ci --silent && npm run build --silent && text > /tmp/after.txt
+          if ! diff -q /tmp/before.txt /tmp/after.txt; then echo "Visible text changed; leaving it for the owner."; exit 1; fi
+      - name: Turn on auto-merge (merges once all required checks pass)
+        if: steps.meta.outputs.update-type == 'version-update:semver-patch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr merge --auto --squash "${{ github.event.pull_request.html_url }}"

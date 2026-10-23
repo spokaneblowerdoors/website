@@ -1,0 +1,17 @@
+# Monthly dependency update pull requests (GitHub's built-in Dependabot; no AI involved).
+# Patch updates auto-merge after all checks pass (see .github/workflows/dependabot-automerge.yml).
+# Everything else waits for the owner to review and click Merge.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    groups:
+      patches:
+        update-types: [patch]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

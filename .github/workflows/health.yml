@@ -1,0 +1,127 @@
+# Scheduled health checks for spokaneblowerdoors.com. Plain scripts only; no AI involved.
+# When a check fails it opens a GitHub issue labelled "health-alert" (GitHub emails the owner),
+# comments on it while the problem continues, and closes it automatically once fixed.
+name: Health checks
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'      # every 15 minutes: site is up
+    - cron: '17 14 * * 1'       # weekly (Monday): DNS, DNSSEC, SSL, redirects, privacy, domain expiry, form service
+    - cron: '23 15 1 * *'       # monthly (1st): broken links, Lighthouse
+    - cron: '7 16 1 1,4,7,10 *' # quarterly: facts review + owner form/email test reminder
+  workflow_dispatch:
+    inputs:
+      check:
+        description: Which check to run now
+        type: choice
+        options: [uptime, weekly, monthly, quarterly]
+        default: weekly
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: health-${{ github.event.schedule || inputs.check }}
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  GH_REPO: ${{ github.repository }}
+
+jobs:
+  uptime:
+    if: github.event.schedule == '*/15 * * * *' || inputs.check == 'uptime'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - id: run
+        continue-on-error: true
+        run: node scripts/uptime-check.mjs > report.md
+      - name: Open, update or close the alert issue
+        run: scripts/health-issue.sh "Website is down or broken" "${{ steps.run.outcome }}" report.md
+
+  weekly:
+    if: github.event.schedule == '17 14 * * 1' || inputs.check == 'weekly'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+      - id: run
+        continue-on-error: true
+        run: node scripts/launch-check.mjs > report.md
+      - name: Open, update or close the alert issue
+        run: scripts/health-issue.sh "Weekly check found a problem (DNS, SSL, privacy, domain or form)" "${{ steps.run.outcome }}" report.md
+
+  monthly:
+    if: github.event.schedule == '23 15 1 * *' || inputs.check == 'monthly'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Check every link on the live site (including outside links)
+        id: links
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # web3forms.com blocks automated checkers, so it is excluded.
+          args: --no-progress --max-retries 3 --exclude 'web3forms\.com' --base-url https://spokaneblowerdoors.com https://spokaneblowerdoors.com/ https://spokaneblowerdoors.com/services/ https://spokaneblowerdoors.com/about/ https://spokaneblowerdoors.com/contact/ https://spokaneblowerdoors.com/privacy/ https://spokaneblowerdoors.com/services/blower-door-testing/ https://spokaneblowerdoors.com/services/duct-leakage-testing/ https://spokaneblowerdoors.com/services/eri-scores/ https://spokaneblowerdoors.com/services/washington-energy-code-compliance/ https://spokaneblowerdoors.com/services/home-energy-audits/
+          output: links.md
+          fail: true
+      - name: Lighthouse on the live site (all categories 90+)
+        id: lighthouse
+        continue-on-error: true
+        run: |
+          npx playwright install chromium
+          node scripts/lighthouse.mjs https://spokaneblowerdoors.com > lighthouse.txt
+      - name: Combine results
+        id: run
+        run: |
+          {
+            echo "### Links"; cat links.md 2>/dev/null || echo "(no link report)"
+            echo; echo "### Lighthouse"; echo '```'; cat lighthouse.txt 2>/dev/null; echo '```'
+          } > report.md
+          if [ "${{ steps.links.outcome }}" = success ] && [ "${{ steps.lighthouse.outcome }}" = success ]; then echo "outcome=success" >> "$GITHUB_OUTPUT"; else echo "outcome=failure" >> "$GITHUB_OUTPUT"; fi
+      - name: Open, update or close the alert issue
+        run: scripts/health-issue.sh "Monthly check found broken links or a low Lighthouse score" "${{ steps.run.outputs.outcome }}" report.md
+
+  quarterly:
+    if: github.event.schedule == '7 16 1 1,4,7,10 *' || inputs.check == 'quarterly'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Facts review request
+        run: |
+          gh issue create --label reminder \
+            --title "Quarterly: check the website's facts are still current" \
+            --body "Every few months, make sure nothing on the website is out of date.
+
+          **To have the AI helper do the comparison:** add the **agent** label to this issue. It will compare every page against \`business-facts.md\` and list anything that looks stale. It changes nothing without a pull request you approve.
+
+          **Things only you know:** new services, changed phone or email, new credentials, a different service area, photos to add. Reply here or open a new issue with the **agent** label.
+
+          **Upcoming renewals:** the domain renews at GoDaddy on Oct 21 each year (auto-renew; keep your card current). The AI helper's Claude token expires around 2027-10-21; see OPERATIONS.md §3.2 to renew it before then."
+      - name: Owner reminder
+        run: |
+          gh issue create --label reminder \
+            --title "Quarterly: send yourself a test message through the website" \
+            --body "Robots can't send the contact form (the form service blocks them), so once a quarter please:
+
+          1. Open https://spokaneblowerdoors.com/contact/ on your phone and send a short test message.
+          2. Check it arrives at Gabriel@2ohairsolutions.com (look in spam too).
+          3. Close this issue.
+
+          If it doesn't arrive, open an issue with the **agent** label, or see OPERATIONS.md → Runbooks → Form not delivering."
