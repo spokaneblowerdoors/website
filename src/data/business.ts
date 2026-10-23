@@ -95,7 +95,7 @@ export const services: Service[] = [
   {
     slug: 'home-energy-audits',
     name: 'Home Energy Audits',
-    short: 'For homeowners: finding drafts and air leaks.',
+    short: 'For homeowners: finding drafts and air leakage.',
     body: [
       'Diagnostic testing for existing homes to locate drafts and air leakage, using calibrated Retrotec equipment, thermal imaging and smoke guns.',
     ],

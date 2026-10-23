@@ -30,7 +30,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - New-home code compliance tests: "Blower door tests that new homes need to pass the energy code." Whole-building airtightness testing for new construction. Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: CFM50, ACH50, written report or code form.
 - Duct leakage tests: "Measuring how much air leaks from your HVAC system." (owner, 2026-10-23, issue #11) Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: total duct leakage and/or duct leakage to outside, as the job requires; written report or code form.
 - Washington C3 calculations: "Showing a home complies with the Washington State Energy Code using the Washington points system." Deliverable: WSEC R406 energy credit worksheet.
-- Home energy audits: "For homeowners: finding drafts and air leaks." Diagnostic testing for existing homes to locate drafts and air leakage. Uses thermal imaging and smoke guns (owner, 2026-10-23, issue #11). Results: CFM50 and ACH50, written report.
+- Home energy audits: "For homeowners: finding drafts and air leakage." (owner, 2026-10-23, issue #13; previously "air leaks") Diagnostic testing for existing homes to locate drafts and air leakage. Uses thermal imaging and smoke guns (owner, 2026-10-23, issue #11). Results: CFM50 and ACH50, written report.
 
 ## Technical details (owner, 2026-10-21)
 - Voice: building scientists; precise, technical wording.
