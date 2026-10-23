@@ -96,6 +96,18 @@ try {
   ok('Contact form service (Web3Forms) reachable', false, e.message);
 }
 
+// Extra domains forwarded by GoDaddy (301) to the main site. See OPERATIONS.md §6.
+for (const d of ['washingtonblowerdoors.com', 'spokaneblowerdoor.com']) {
+  for (const url of [`https://${d}/`, `http://${d}/`, `https://www.${d}/`, `http://www.${d}/`]) {
+    try {
+      const res = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(20000) });
+      ok(`${url} forwards to the main site`, res.ok && new URL(res.url).hostname === HOST, `${res.status} → ${res.url}`);
+    } catch (e) {
+      ok(`${url} forwards to the main site`, false, e.cause?.code || e.message);
+    }
+  }
+}
+
 // Report
 const failed = results.filter((r) => !r.pass);
 console.log(`## Launch check: ${failed.length ? `❌ ${failed.length} problem(s)` : '✅ all passed'} (${new Date().toISOString()})\n`);

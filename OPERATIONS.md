@@ -215,6 +215,25 @@ npm run dev            # local dev server
   **If you ever move DNS away from Cloudflare:** (1) remove the DS record at GoDaddy, (2) **wait at least
   48 hours** (the DS record is cached), (3) only then change the nameservers, and (4) after the move,
   disable DNSSEC in Cloudflare. Doing it in the wrong order takes the whole domain offline.
+- ⚠️ **Never add GoDaddy forwarding to spokaneblowerdoors.com.** Forwarding requires GoDaddy DNS. On
+  2026-10-23 at 06:08 UTC, setting up forwarding switched the main domain's nameservers back to GoDaddy
+  and removed the DS record, so the site was served by GoDaddy for about 12 minutes until the owner
+  restored kelly/pedro (06:20 UTC). Restore procedure: put the NS back to Cloudflare, wait **48 hours**
+  (the .com delegation TTL), then re-add the DS record (unchanged: 2371/13/2/EC94…70A9; Cloudflare's
+  DNSSEC shows "pending" until then).
+- **Extra domains (forwarding only):** the owner also owns **washingtonblowerdoors.com** and
+  **spokaneblowerdoor.com** (no "s"). Both are at GoDaddy (DNS at GoDaddy, NS ns29/ns30.domaincontrol.com),
+  with no email and no website. GoDaddy **Domain Forwarding** is set to **Permanent (301), forward only** →
+  spokaneblowerdoors.com (set up 2026-10-22, owner's choice over moving them to Cloudflare).
+  - GoDaddy forwards only the bare domain; paths like `/services/` return 404 on those domains.
+  - Today they forward to `http://spokaneblowerdoors.com`, so the Worker adds a second hop to https.
+    Optional: edit each forward to use `https://`.
+  - GoDaddy issues certificates per hostname. `https://www.spokaneblowerdoor.com` had no certificate yet
+    right after setup.
+  - Checked weekly by `launch-check.mjs`. If one fails for days, the reliable fix is to move that domain's
+    DNS to Cloudflare (same process as the main domain) and add it as a Worker custom domain, with a
+    redirect in `src/worker.js`.
+  - Their registrations also expire 2027-10-21. Confirm auto-renew is on for each.
 - **Approved DNS or email changes** (e.g. adding email hosting): also update the expectations in
   `scripts/launch-check.mjs` (it checks "no MX" and the exact DMARC record) in the same PR, or the weekly
   check will start failing.
@@ -421,4 +440,6 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-10-21: Domain moved to Cloudflare DNS (NS kelly/pedro); `_dmarc` + `_domainconnect` copied; custom domains + one-hop redirects (PR #6). IndexNow enabled.
 - 2026-10-22: Cloudflare Web Analytics disabled by owner (privacy promise). Search Console verified (TXT); Bing imported; Google Business Profile pending.
 - 2026-10-22: DNSSEC enabled (DS key tag 2371 at GoDaddy). Scheduled health checks, Dependabot + patch auto-merge, OPERATIONS.md added.
+- 2026-10-22: washingtonblowerdoors.com and spokaneblowerdoor.com forwarded (GoDaddy 301) to the main site; added to the weekly check.
+- 2026-10-23: Incident. The main domain's NS reverted to GoDaddy and the DS was removed during forwarding setup (06:08 UTC); NS restored to Cloudflare at 06:20 UTC. **DS record to be re-added at GoDaddy on/after 2026-10-25** (DNSSEC "pending" until then).
 - 2026-10-22: OPERATIONS.md and AGENTS.md revised after a fresh-reader test (rollback version choice, DNSSEC move order, token rotation commands, agent switching, maintainer access). Added `.nvmrc` (Node 24).

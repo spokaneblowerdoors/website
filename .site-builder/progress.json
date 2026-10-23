@@ -74,7 +74,7 @@
     "1.8 follow-up: the FIRST setup-token (the older of two) was exposed in the chat transcript when Claude closed terminal tab c1. Unused. Owner should revoke it from Claude account settings if possible.",
     "Owner should close terminal tab c2 themselves (Claude must not close it: the close tool returns screen text containing the token)."
   ],
-  "waiting_on_external": ["7.5: Google Business Profile verification (then add review link + QR code)"],
+  "waiting_on_external": ["6.8 redo: re-add DS (2371/13/2/EC940BCE...70A9) at GoDaddy on/after 2026-10-25 (48h after NS restored 2026-10-23 06:20 UTC)","7.5: Google Business Profile verification (then add review link + QR code)"],
   "notes": [
     "2026-10-21: START_HERE.html referenced in SITE_BUILDER.md does not exist in the folder; owner started directly in Claude.",
     "2026-10-21: Project folder is C:\\Users\\annie\\Downloads\\My Website.",
