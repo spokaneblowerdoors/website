@@ -61,10 +61,7 @@ import { business, services } from '../data/business';
         {business.customers.map((c) => <li>{c}</li>)}
       </ul>
       <h2 style="margin-top:40px">Service area</h2>
-      <p class="lead">{business.serviceArea}, including:</p>
-      <ul class="pills">
-        {business.towns.map((t) => <li>{t}</li>)}
-      </ul>
+      <p class="lead">{business.serviceArea}</p>
     </div>
   </section>
 

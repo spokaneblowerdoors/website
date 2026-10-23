@@ -29,7 +29,6 @@ const jsonLd = {
   logo: `${business.url}/favicon.svg`,
   image: `${business.url}/og-image.png`,
   areaServed: [
-    ...business.towns.map((t) => ({ '@type': 'City', name: t })),
     { '@type': 'Place', name: business.serviceArea },
   ],
   makesOffer: services.map((s) => ({
@@ -86,7 +85,7 @@ const jsonLd = {
       <div class="wrap footer-grid">
         <div>
           <p class="footer-name">{business.name}</p>
-          <p>Serving {business.serviceArea}, including {business.towns.slice(0, -1).join(', ')} and {business.towns.at(-1)}.</p>
+          <p>Serving {business.serviceArea}.</p>
           <p>Hours: {business.hours}</p>
         </div>
         <div>
