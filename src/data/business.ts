@@ -9,6 +9,7 @@ export const business = {
   url: 'https://spokaneblowerdoors.com',
   hours: 'By appointment',
   serviceArea: 'North Idaho and Eastern Washington',
+  ownership: 'Owned and operated from Post Falls, Idaho.',
   customers: ['Home builders', 'Homeowners', 'HVAC contractors', 'Remodelers'],
   customersPhrase: 'home builders, homeowners, HVAC contractors and remodelers',
   pricing: 'Call for a quote',
@@ -103,5 +104,14 @@ export const services: Service[] = [
     title: 'Home Energy Audit Spokane | Spokane Blower Doors',
     description:
       'Home energy audits in North Idaho and Eastern Washington. Diagnostic testing to locate air leakage. Call 509-903-8595.',
+  },
+  {
+    slug: 'energy-efficiency-consultation',
+    name: 'Energy Efficiency Consultation',
+    short: 'Comprehensive energy consultation from framing to final.',
+    body: ['Comprehensive energy consultation from framing to final.'],
+    title: 'Energy Efficiency Consultation | Spokane Blower Doors',
+    description:
+      'Comprehensive energy consultation from framing to final. North Idaho and Eastern Washington. Call 509-903-8595.',
   },
 ];

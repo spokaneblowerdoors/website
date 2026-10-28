@@ -131,7 +131,7 @@ it from their Claude account if possible.
 | `business-facts.md` | **Source of truth** for every fact on the site, owner-approved. Never change it without the owner. |
 | `src/data/business.ts` | Facts used by pages. Must match `business-facts.md`. |
 | `src/data/form.ts` | Web3Forms endpoint, public access key, email subject |
-| `src/pages/` | Pages: home, `services/` (index + `[slug].astro` for 5 services), about, contact, privacy, thank-you, 404 |
+| `src/pages/` | Pages: home, `services/` (index + `[slug].astro` for 6 services), about, contact, privacy, thank-you, 404 |
 | `src/layouts/Base.astro` | Shared layout: meta tags, canonical, OG, **JSON-LD** (`HomeAndConstructionBusiness`), header/footer, mobile call bar |
 | `src/components/ContactForm.astro` | Form: honeypot `botcheck`, client-side validation, JSON fetch to Web3Forms, `/thank-you/` |
 | `src/styles/global.css` | All styles |
@@ -442,4 +442,5 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-10-22: DNSSEC enabled (DS key tag 2371 at GoDaddy). Scheduled health checks, Dependabot + patch auto-merge, OPERATIONS.md added.
 - 2026-10-22: washingtonblowerdoors.com and spokaneblowerdoor.com forwarded (GoDaddy 301) to the main site; added to the weekly check.
 - 2026-10-23: Incident. The main domain's NS reverted to GoDaddy and the DS was removed during forwarding setup (06:08 UTC); NS restored to Cloudflare at 06:20 UTC. **DS record to be re-added at GoDaddy on/after 2026-10-25** (DNSSEC "pending" until then).
+- 2026-10-28: Added Energy Efficiency Consultation service and Post Falls, Idaho ownership line (issue #17). `health.yml` link list not updated (workflow changes need owner approval); add `/services/energy-efficiency-consultation/` there.
 - 2026-10-22: OPERATIONS.md and AGENTS.md revised after a fresh-reader test (rollback version choice, DNSSEC move order, token rotation commands, agent switching, maintainer access). Added `.nvmrc` (Node 24).

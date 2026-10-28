@@ -14,6 +14,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Phone: 509-903-8595 (confirmed by owner, 2026-10-21)
 - Email for website messages and accounts: Gabriel@2ohairsolutions.com (confirmed by owner, 2026-10-21)
 - Service area: North Idaho and Eastern Washington (confirmed by owner, 2026-10-21; wording order and no town list per owner, 2026-10-23, issue #11)
+- Ownership (owner, 2026-10-28, issue #17): owned and operated from Post Falls, Idaho. Shown on the About page only. No street address, no other towns.
 
 ## Hours
 - By appointment (confirmed by owner, 2026-10-21)
@@ -23,6 +24,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Duct leakage tests
 - Washington C3 calculations
 - Home energy audits
+- Energy efficiency consultation (owner, 2026-10-28, issue #17)
 - ERI scores (owner, 2026-10-21): Energy Rating Index scores, including HERS Index scores, calculated under ANSI/RESNET/ICC 301. Used for: energy code compliance via the ERI path (WSEC in Washington; IECC in Idaho), HERS Index scores, builder marketing, utility/tax incentive programs requiring an ERI or HERS Index score. Result: ERI / HERS Index score.
 - (Energy Star tests: owner offers these but said "don't mention Energy Star for now", 2026-10-21. Keep ENERGY STAR off the site entirely until the owner says otherwise.)
 
@@ -31,6 +33,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Duct leakage tests: "Measuring how much air leaks from your HVAC system." (owner, 2026-10-23, issue #11) Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: total duct leakage and/or duct leakage to outside, as the job requires; written report or code form.
 - Washington C3 calculations: "Showing a home complies with the Washington State Energy Code using the Washington points system." Deliverable: WSEC R406 energy credit worksheet.
 - Home energy audits: "For homeowners: finding drafts and air leakage." (owner, 2026-10-23, issue #13; previously "air leaks") Diagnostic testing for existing homes to locate drafts and air leakage. Uses thermal imaging and smoke guns (owner, 2026-10-23, issue #11). Results: CFM50 and ACH50, written report.
+- Energy efficiency consultation: "Comprehensive energy consultation from framing to final." (owner, 2026-10-28, issue #17; owner's wording, no further detail given)
 
 ## Technical details (owner, 2026-10-21)
 - Voice: building scientists; precise, technical wording.
