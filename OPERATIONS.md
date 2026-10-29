@@ -443,4 +443,5 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-10-22: washingtonblowerdoors.com and spokaneblowerdoor.com forwarded (GoDaddy 301) to the main site; added to the weekly check.
 - 2026-10-23: Incident. The main domain's NS reverted to GoDaddy and the DS was removed during forwarding setup (06:08 UTC); NS restored to Cloudflare at 06:20 UTC. **DS record to be re-added at GoDaddy on/after 2026-10-25** (DNSSEC "pending" until then).
 - 2026-10-28: Added Energy Efficiency Consultation service and Post Falls, Idaho ownership line (issue #17). `health.yml` link list not updated (workflow changes need owner approval); add `/services/energy-efficiency-consultation/` there.
+- 2026-10-29: Added temporary, unlisted `/color-preview/` page (draft color options, issue #19) and excluded it from the sitemap in `astro.config.mjs`. Live site colors unchanged. Delete the page after the owner chooses.
 - 2026-10-22: OPERATIONS.md and AGENTS.md revised after a fresh-reader test (rollback version choice, DNSSEC move order, token rotation commands, agent switching, maintainer access). Added `.nvmrc` (Node 24).

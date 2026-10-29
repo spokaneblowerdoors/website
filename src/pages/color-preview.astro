@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import { business, services } from '../data/business';
+
+const themes = [
+  { id: 'red-yellow', label: 'Option 1: Red and yellow (red leads, yellow accents)' },
+  { id: 'yellow-red', label: 'Option 2: Yellow and red (yellow leads, red accents)' },
+  { id: 'blue-yellow', label: 'Option 3: Blue and yellow (blue leads, yellow accents)' },
+];
+const sample = services.slice(0, 2);
+---
+<Base
+  title="Color preview | Spokane Blower Doors"
+  description="Draft color options for the Spokane Blower Doors website. Not part of the public site."
+  noindex
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>Color preview</h1>
+      <p class="lead">Three draft color schemes shown side by side, using the current home page wording. The live site has not changed. This page is temporary and is not listed in search engines.</p>
+    </div>
+  </section>
+
+  {themes.map((t) => (
+    <section class={`pv ${t.id}`} aria-labelledby={`h-${t.id}`}>
+      <div class="wrap pv-label"><h2 id={`h-${t.id}`}>{t.label}</h2></div>
+      <div class="pv-frame">
+        <div class="pv-header">
+          <div class="wrap pv-header-inner">
+            <span class="pv-brand">
+              <svg class="pv-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="3" width="24" height="26" rx="3" fill="currentColor" opacity=".15"/><rect x="4" y="3" width="24" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="16" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M16 9.5v13M9.5 16h13" stroke="currentColor" stroke-width="1.6"/></svg>
+              {business.name}
+            </span>
+            <span class="pv-nav">Home · Services · About · Contact</span>
+            <span class="pv-btn pv-btn-accent">Call {business.phone}</span>
+          </div>
+        </div>
+        <div class="pv-hero">
+          <div class="wrap">
+            <p class="pv-h1">Building performance testing in Eastern Washington and North Idaho</p>
+            <p class="pv-sub">Envelope airtightness and duct leakage testing, ERI scores, Washington energy code calculations and home energy audits for {business.customersPhrase}.</p>
+            <p class="pv-actions">
+              <span class="pv-btn pv-btn-accent">Call {business.phone}</span>
+              <span class="pv-btn pv-btn-outline">Send a message</span>
+            </p>
+          </div>
+        </div>
+        <div class="pv-body">
+          <div class="wrap">
+            <p class="pv-h2">Services</p>
+            <div class="pv-cards">
+              {sample.map((s) => (
+                <div class="pv-card">
+                  <p class="pv-h3">{s.name}</p>
+                  <p>{s.short}</p>
+                  <span class="pv-link">Learn more →</span>
+                </div>
+              ))}
+            </div>
+            <div class="pv-cta">
+              <div>
+                <p class="pv-cta-title">Schedule testing</p>
+                <p class="pv-cta-text">Service is {business.hours.toLowerCase()}. {business.pricing}.</p>
+              </div>
+              <span class="pv-btn pv-btn-accent">Call {business.phone}</span>
+            </div>
+          </div>
+        </div>
+        <div class="pv-footer">
+          <div class="wrap">
+            <p class="pv-footer-name">{business.name}</p>
+            <p>Serving {business.serviceArea}.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .pv { padding: 24px 0 40px; }
+  .pv-label h2 { margin-bottom: 12px; }
+  .pv-frame { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pv p { margin: 0 0 .8em; }
+
+  .red-yellow {
+    --p: #b3261e; --p-ink: #ffffff; --p-sub: #fbe3e1; --head: #b3261e; --link: #b3261e;
+    --a: #f5b800; --a-ink: #1a1a1a; --mark: #ffd84d; --foot: #4d0f0b;
+    --hero: linear-gradient(160deg, #b3261e 0%, #8f1d17 100%);
+  }
+  .yellow-red {
+    --p: #f5b800; --p-ink: #1a1a1a; --p-sub: #2b2200; --head: #a61c14; --link: #a61c14;
+    --a: #c62828; --a-ink: #ffffff; --mark: #1a1a1a; --foot: #2b2200;
+    --hero: linear-gradient(160deg, #f5b800 0%, #ffd84d 100%);
+  }
+  .blue-yellow {
+    --p: #12407a; --p-ink: #ffffff; --p-sub: #dbe7f6; --head: #12407a; --link: #12407a;
+    --a: #f5b800; --a-ink: #1a1a1a; --mark: #ffd84d; --foot: #0a2347;
+    --hero: linear-gradient(160deg, #12407a 0%, #0d2f5c 100%);
+  }
+
+  .pv-header { background: var(--p); color: var(--p-ink); }
+  .pv-header-inner { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+  .pv-brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.2rem; }
+  .pv-mark { width: 34px; height: 34px; color: var(--mark); }
+  .pv-nav { margin-left: auto; }
+  .pv-btn { display: inline-block; padding: 12px 20px; border-radius: 10px; font-weight: 700; line-height: 1.3; }
+  .pv-btn-accent { background: var(--a); color: var(--a-ink); }
+  .pv-btn-outline { border: 2px solid currentColor; }
+
+  .pv-hero { background: var(--hero); color: var(--p-ink); padding: 48px 0; }
+  .pv-h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 700; line-height: 1.2; max-width: 20ch; }
+  .pv-sub { font-size: 1.2rem; max-width: 46ch; }
+  .pv-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+
+  .pv-body { padding: 36px 0; }
+  .pv-h2 { font-size: 1.6rem; font-weight: 700; color: var(--head); }
+  .pv-h3 { font-size: 1.2rem; font-weight: 700; color: var(--head); margin-bottom: .3em; }
+  .pv-cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-bottom: 24px; }
+  .pv-card { border: 1px solid var(--line); border-top: 5px solid var(--a); border-radius: var(--radius); padding: 20px; }
+  .pv-link { color: var(--link); font-weight: 700; text-decoration: underline; }
+
+  .pv-cta { background: var(--p); color: var(--p-ink); border-radius: var(--radius); padding: 24px; display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .pv-cta-title { font-size: 1.5rem; font-weight: 700; margin-bottom: .2em; }
+  .pv-cta-text { margin: 0; }
+
+  .pv-footer { background: var(--foot); color: #f1ece4; padding: 24px 0 8px; }
+  .pv-footer-name { font-weight: 800; font-size: 1.2rem; color: #fff; }
+</style>
