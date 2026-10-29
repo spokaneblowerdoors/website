@@ -70,7 +70,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 
 ## Look and feel
 - Tone: precise, technical, professional: building scientists (owner, 2026-10-21; replaces "straightforward and professional")
-- Colors: clean blue/green (owner, 2026-10-21)
+- Colors: blue with yellow accents (owner, 2026-10-29, issue #22; replaces "clean blue/green")
 - Search phrases approved (owner, 2026-10-21): blower door test Spokane; duct leakage test Spokane; Washington energy code compliance; blower door Coeur d'Alene; home energy audit Spokane; new construction air test; HERS rating Spokane; ERI score Spokane; HERS rater Coeur d'Alene. ("Energy Star home testing" is on hold with ENERGY STAR.)
 
 ## Do NOT put on the site
