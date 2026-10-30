@@ -33,7 +33,9 @@ export type Service = {
   slug: string;
   name: string;
   short: string;
+  cardName?: string;
   body: string[];
+  expect?: string[];
   reports?: string[];
   title: string;
   description: string;
@@ -43,11 +45,18 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: 'blower-door-testing',
-    name: 'New-Home Code Compliance Tests',
-    short: 'Blower door tests that new homes need to pass the energy code.',
+    name: 'Blower Door Testing',
+    cardName: 'Code Compliance',
+    short:
+      'Blower door testing verifies that a new home meets the airtightness requirements of the energy code. We perform whole-building airtightness testing for new construction using calibrated Retrotec equipment, giving builders accurate, reliable results they can submit with confidence.',
     body: [
-      'Whole-building airtightness testing for new construction, performed with calibrated Retrotec blower door equipment.',
-      'Testing follows ANSI/RESNET/ICC 380 and the test procedures of the Washington State Energy Code (WSEC) and IECC.',
+      'All testing follows ANSI/RESNET/ICC Standard 380 and the test procedures required by the Washington State Energy Code. During the test, the home is depressurized to a standard pressure while we measure how much air leaks through the building envelope. The result is reported in air changes per hour at 50 pascals (ACH50) and compared against the code’s maximum allowable leakage.',
+    ],
+    expect: [
+      'Code-compliant documentation: a signed test report ready to submit to your building department.',
+      'Calibrated equipment: Retrotec fans and gauges maintained to manufacturer calibration standards for accurate, repeatable results.',
+      'Leak diagnosis: if a home doesn’t pass, we help identify where air is escaping so you can make targeted repairs before a retest.',
+      'Scheduling that fits your build: testing coordinated with your timeline.',
     ],
     reports: ['CFM50', 'ACH50', 'Written report or code form'],
     title: "Blower Door Test Spokane & Coeur d'Alene | New Homes",
