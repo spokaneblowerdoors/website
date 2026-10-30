@@ -7,7 +7,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/thank-you/') && !page.includes('/hero-options/'),
+      filter: (page) => !page.includes('/thank-you/'),
     }),
   ],
 });
