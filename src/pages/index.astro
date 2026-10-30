@@ -24,7 +24,7 @@ import { business, services } from '../data/business';
       <div class="cards">
         {services.map((s) => (
           <article class="card">
-            <h3>{s.name}</h3>
+            <h3>{s.cardName ?? s.name}</h3>
             <p>{s.short}</p>
             <a class="more" href={`/services/${s.slug}/`}>Learn more<span class="visually-hidden"> about {s.name}</span><span aria-hidden="true"> →</span></a>
           </article>

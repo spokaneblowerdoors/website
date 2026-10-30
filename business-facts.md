@@ -20,7 +20,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - By appointment (confirmed by owner, 2026-10-21)
 
 ## Services on the site (owner, 2026-10-21)
-- New-home code compliance tests (owner, 2026-10-23, issue #11; renamed from "New-home code tests")
+- Blower door testing for new homes (owner, 2026-10-30, PR #25; service page renamed from "New-home code compliance tests"; home page card titled "Code Compliance")
 - Duct leakage tests
 - Washington C3 calculations
 - Home energy audits
@@ -29,7 +29,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - (Energy Star tests: owner offers these but said "don't mention Energy Star for now", 2026-10-21. Keep ENERGY STAR off the site entirely until the owner says otherwise.)
 
 ## Service descriptions and details shown on the site (approved by owner, 2026-10-21)
-- New-home code compliance tests: "Blower door tests that new homes need to pass the energy code." Whole-building airtightness testing for new construction. Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: CFM50, ACH50, written report or code form.
+- Blower door testing (owner, 2026-10-30, PR #25; replaces the earlier new-home code compliance tests description): "Blower door testing verifies that a new home meets the airtightness requirements of the energy code." Whole-building airtightness testing for new construction using calibrated Retrotec equipment. Follows ANSI/RESNET/ICC Standard 380 and the test procedures required by the Washington State Energy Code. The home is depressurized to a standard pressure; the result is reported in ACH50 and compared against the code's maximum allowable leakage. Builders can expect: a signed test report ready to submit to the building department; Retrotec fans and gauges maintained to manufacturer calibration standards; help identifying where air escapes if a home doesn't pass, before a retest; scheduling coordinated with the build timeline. Results: CFM50, ACH50, written report or code form.
 - Duct leakage tests: "Measuring how much air leaks from your HVAC system." (owner, 2026-10-23, issue #11) Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: total duct leakage and/or duct leakage to outside, as the job requires; written report or code form.
 - Washington C3 calculations: "Showing a home complies with the Washington State Energy Code using the Washington points system." Deliverable: WSEC R406 energy credit worksheet.
 - Home energy audits: "For homeowners: finding drafts and air leakage." (owner, 2026-10-23, issue #13; previously "air leaks") Diagnostic testing for existing homes to locate drafts and air leakage. Uses thermal imaging and smoke guns (owner, 2026-10-23, issue #11). Results: CFM50 and ACH50, written report.
