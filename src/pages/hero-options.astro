@@ -1,0 +1,95 @@
+---
+import Base from '../layouts/Base.astro';
+import { business } from '../data/business';
+
+const options = [
+  { n: 1, name: 'Soft glow', note: 'Simple and subtle: a light glow in the upper right corner.' },
+  { n: 2, name: 'Faint grid', note: 'A fine measurement-grid texture that fades toward the left.' },
+  { n: 3, name: 'Airflow lines', note: 'Thin curved lines suggesting air movement, with one gold line.' },
+  { n: 4, name: 'Fan rings', note: 'Concentric rings (like a blower door fan) with a gold arc.' },
+  { n: 5, name: 'Gauge dial', note: 'Most dramatic: a translucent pressure-gauge dial with a gold needle. No numbers shown.' },
+];
+const ticks = [-120, -90, -60, -30, 0, 30, 60, 90, 120];
+---
+<Base
+  title="Home Page Design Options | Spokane Blower Doors"
+  description="Five draft designs for the home page banner. For owner review only; not linked from the site."
+  noindex
+>
+  <section class="section">
+    <div class="wrap">
+      <h1>Home page banner options</h1>
+      <p class="lead">Five drafts of the blue banner, from simple and subtle (1) to slightly more dramatic (5). Reply on the pull request with the number you like and it will be applied to the home page.</p>
+    </div>
+  </section>
+
+  {options.map((o) => (
+    <section class="opt-block">
+      <div class="wrap"><p class="opt-label"><strong>Option {o.n}: {o.name}.</strong> {o.note}</p></div>
+      <div class={`hero opt opt-${o.n}`}>
+        <div class="wrap">
+          <h2 class="opt-h">Building performance testing in Eastern Washington and North Idaho</h2>
+          <p>Envelope airtightness and duct leakage testing, ERI scores, Washington energy code calculations and home energy audits for {business.customersPhrase}.</p>
+          <div class="actions">
+            <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
+            <a class="btn btn-secondary" href="/contact/">Send a message</a>
+          </div>
+        </div>
+        {o.n === 3 && (
+          <svg class="deco" viewBox="0 0 600 300" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+            <g fill="none" stroke="#fff" stroke-linecap="round" stroke-opacity=".16" stroke-width="2">
+              <path d="M0 220 C150 120 300 300 600 140" />
+              <path d="M0 180 C160 80 320 260 600 100" />
+              <path d="M0 140 C170 40 340 220 600 60" />
+              <path d="M0 260 C140 170 280 330 600 180" />
+            </g>
+            <path d="M0 200 C155 100 310 280 600 120" fill="none" stroke="#f2b705" stroke-opacity=".55" stroke-width="3" stroke-linecap="round" />
+          </svg>
+        )}
+        {o.n === 4 && (
+          <svg class="deco" viewBox="0 0 400 400" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+            <g fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2">
+              <circle cx="260" cy="200" r="60" />
+              <circle cx="260" cy="200" r="100" />
+              <circle cx="260" cy="200" r="140" />
+              <circle cx="260" cy="200" r="180" />
+            </g>
+            <path d="M260 20 A180 180 0 0 1 440 200" fill="none" stroke="#f2b705" stroke-opacity=".6" stroke-width="4" stroke-linecap="round" />
+            <circle cx="260" cy="200" r="10" fill="#f2b705" fill-opacity=".7" />
+          </svg>
+        )}
+        {o.n === 5 && (
+          <svg class="deco" viewBox="0 0 400 400" preserveAspectRatio="xMaxYMid meet" aria-hidden="true">
+            <circle cx="230" cy="210" r="150" fill="#fff" fill-opacity=".07" stroke="#fff" stroke-opacity=".28" stroke-width="3" />
+            <circle cx="230" cy="210" r="118" fill="none" stroke="#fff" stroke-opacity=".14" stroke-width="2" />
+            <g stroke="#fff" stroke-opacity=".4" stroke-width="3" stroke-linecap="round">
+              {ticks.map((t) => <path d="M230 78v22" transform={`rotate(${t} 230 210)`} />)}
+            </g>
+            <path d="M230 210 L230 108" stroke="#f2b705" stroke-width="6" stroke-linecap="round" transform="rotate(38 230 210)" />
+            <circle cx="230" cy="210" r="13" fill="#f2b705" />
+            <path d="M120 300 A150 150 0 0 0 340 300" fill="none" stroke="#f2b705" stroke-opacity=".5" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        )}
+      </div>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .opt-block { margin-bottom: 40px; }
+  .opt-label { margin: 0 0 12px; }
+  .opt { position: relative; overflow: hidden; }
+  .opt .wrap { position: relative; z-index: 1; }
+  .opt-h { color: #fff; max-width: 18ch; font-size: 2rem; }
+  .deco { position: absolute; top: 0; right: 0; height: 100%; width: 55%; z-index: 0; pointer-events: none; }
+  .opt-1 { background: radial-gradient(circle at 85% 15%, rgba(255,255,255,.18), transparent 45%), linear-gradient(160deg, var(--brand) 0%, #1a58a0 100%); }
+  .opt-2 {
+    background-image:
+      linear-gradient(90deg, #12407a 0%, rgba(18,64,122,0) 60%),
+      linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+      linear-gradient(160deg, var(--brand) 0%, #1a58a0 100%);
+    background-size: 100% 100%, 40px 40px, 40px 40px, 100% 100%;
+  }
+  @media (max-width: 760px) { .deco { opacity: .5; width: 80%; } }
+</style>
