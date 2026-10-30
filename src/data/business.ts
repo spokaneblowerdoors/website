@@ -104,16 +104,18 @@ export const services: Service[] = [
   },
   {
     slug: 'washington-energy-code-compliance',
-    name: 'Washington C3 Calculations',
-    short: 'Showing a home complies with the Washington State Energy Code using the Washington points system.',
+    name: 'WSEC Energy Credits',
+    cardText:
+      'Washington homes must earn a minimum number of energy credits, based on home size, through efficiency upgrades like higher R-Value insulation, HVAC, and Photovoltaic systems',
+    short:
+      'Washington homes must earn a minimum number of energy credits to comply with the Washington State Energy Code. The number required depends on the size of the home, and credits are earned through efficiency choices such as envelope improvements, high-efficiency HVAC and water heating, reduced air leakage, and renewable energy.',
     body: [
-      'Energy code compliance through the Washington State Energy Code points system.',
-      'The deliverable is a WSEC R406 energy credit worksheet.',
+      'We review your plans and specifications, identify the credit options that fit your build, and document compliance on the WSEC R406 energy credit worksheet, ready to submit with your permit application.',
     ],
-    reports: ['WSEC R406 energy credit worksheet'],
-    title: 'Washington Energy Code Compliance | C3 Calculations',
+    reports: ['Completed WSEC R406 energy credit worksheet'],
+    title: 'WSEC Energy Credits | Washington C3 Calculations',
     description:
-      'Washington C3 calculations: WSEC compliance through the points system, delivered as a WSEC R406 energy credit worksheet. Call 509-903-8595.',
+      'WSEC energy credits and Washington C3 calculations, documented on a WSEC R406 energy credit worksheet for your permit application. 509-903-8595.',
   },
   {
     slug: 'home-energy-audits',
