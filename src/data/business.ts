@@ -36,7 +36,9 @@ export type Service = {
   cardName?: string;
   cardText?: string;
   body: string[];
+  expectHeading?: string;
   expect?: string[];
+  closing?: string[];
   reports?: string[];
   title: string;
   description: string;
@@ -119,23 +121,37 @@ export const services: Service[] = [
   },
   {
     slug: 'home-energy-audits',
-    name: 'Home Energy Audits',
-    short: 'For homeowners: finding drafts and air leakage.',
-    body: [
+    name: 'Home Air Leakage Diagnostics',
+    cardText:
       'Diagnostic testing for existing homes to locate drafts and air leakage, using calibrated Retrotec equipment, thermal imaging and smoke guns.',
-    ],
+    short:
+      'Drafty rooms, high energy bills, or uneven temperatures often point to hidden air leaks. We test existing homes with calibrated Retrotec blower door equipment, thermal imaging, and smoke guns to pinpoint exactly where air is getting in and out, so you know which fixes will make the biggest difference.',
+    body: [],
     reports: ['CFM50 and ACH50', 'Written report'],
-    title: 'Home Energy Audit Spokane | Spokane Blower Doors',
+    title: 'Home Air Leakage Diagnostics | Spokane Blower Doors',
     description:
-      'Home energy audits in North Idaho and Eastern Washington. Diagnostic testing to locate air leakage. Call 509-903-8595.',
+      'Air leakage diagnostics for existing homes in North Idaho and Eastern Washington. Blower door, thermal imaging, smoke guns. 509-903-8595.',
   },
   {
     slug: 'energy-efficiency-consultation',
     name: 'Energy Efficiency Consultation',
-    short: 'Comprehensive energy consultation from framing to final.',
-    body: ['Comprehensive energy consultation from framing to final.'],
+    cardText:
+      'Expert guidance from framing to final. We work with builders throughout construction to plan energy code compliance, catch air sealing and insulation issues early, and help every home pass its final tests the first time.',
+    short:
+      'Expert guidance from framing to final. We work alongside builders throughout construction to plan energy code compliance, catch air sealing and insulation issues before they’re covered up, and help every home pass its final tests the first time.',
+    body: [
+      'Problems found early are faster and cheaper to fix. A missed air sealing detail at framing or a gap in insulation before drywall can mean a failed blower door test, costly repairs, and delays at final. Our consultation helps your crews get it right as the home goes up.',
+    ],
+    expectHeading: 'What’s included',
+    expect: [
+      'Plan review: identifying energy code requirements and choosing the most practical WSEC credit options for your build.',
+      'Framing and pre-drywall walkthroughs: checking air sealing, insulation, and duct installation while problems are still easy to fix.',
+      'Diagnostic testing: blower door and duct leakage testing at key stages to confirm the home is on track.',
+      'Practical recommendations: clear, cost-conscious guidance your crews and subcontractors can act on.',
+    ],
+    closing: ['The result is fewer failed tests, fewer callbacks, and homes that perform the way they were designed to.'],
     title: 'Energy Efficiency Consultation | Spokane Blower Doors',
     description:
-      'Comprehensive energy consultation from framing to final. North Idaho and Eastern Washington. Call 509-903-8595.',
+      'Energy consultation for builders from framing to final: code compliance planning and pre-drywall checks. 509-903-8595.',
   },
 ];

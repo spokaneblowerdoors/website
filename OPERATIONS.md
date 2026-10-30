@@ -446,3 +446,4 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-10-29: Site colors changed to blue with yellow accents; favicon redone in the new colors and also served as `/favicon.ico`, `/favicon-192.png` and `/apple-touch-icon.png` (generated at build from `public/favicon.svg` by `src/lib/icon.ts`) so Google can show it (issue #22). `scripts/make-og-image.mjs` colors updated; `public/og-image.png` needs regenerating (`node scripts/make-og-image.mjs`).
 - 2026-10-30: Home page C3 card text reworded; banner airflow lines now span the full width, behind the text (issue #32).
 - 2026-10-22: OPERATIONS.md and AGENTS.md revised after a fresh-reader test (rollback version choice, DNSSEC move order, token rotation commands, agent switching, maintainer access). Added `.nvmrc` (Node 24).
+- 2026-10-30: Renamed Home Energy Audits to Home Air Leakage Diagnostics and replaced Energy Efficiency Consultation text (issue #37). No configuration change.
