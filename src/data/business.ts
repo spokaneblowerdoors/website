@@ -34,6 +34,7 @@ export type Service = {
   name: string;
   short: string;
   cardName?: string;
+  cardText?: string;
   body: string[];
   expect?: string[];
   reports?: string[];
@@ -47,6 +48,8 @@ export const services: Service[] = [
     slug: 'blower-door-testing',
     name: 'Blower Door Testing',
     cardName: 'Code Compliance',
+    cardText:
+      'Blower door testing verifies that new homes meet energy code airtightness requirements. We use calibrated Retrotec equipment to give builders accurate results they can submit with confidence.',
     short:
       'Blower door testing verifies that a new home meets the airtightness requirements of the energy code. We perform whole-building airtightness testing for new construction using calibrated Retrotec equipment, giving builders accurate, reliable results they can submit with confidence.',
     body: [
