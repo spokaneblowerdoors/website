@@ -21,7 +21,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 
 ## Services on the site (owner, 2026-10-21)
 - Blower door testing for new homes (owner, 2026-10-30, PR #25; service page renamed from "New-home code compliance tests"; home page card titled "Code Compliance"; home page card text, owner, 2026-10-30, PR #26: "Blower door testing verifies that new homes meet energy code airtightness requirements. We use calibrated Retrotec equipment to give builders accurate results they can submit with confidence.")
-- Duct leakage tests
+- Duct leakage testing (owner, 2026-10-30, PR #27; renamed from "Duct leakage tests")
 - Washington C3 calculations
 - Home energy audits
 - Energy efficiency consultation (owner, 2026-10-28, issue #17)
@@ -30,7 +30,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 
 ## Service descriptions and details shown on the site (approved by owner, 2026-10-21)
 - Blower door testing (owner, 2026-10-30, PR #25; replaces the earlier new-home code compliance tests description): "Blower door testing verifies that a new home meets the airtightness requirements of the energy code." Whole-building airtightness testing for new construction using calibrated Retrotec equipment. Follows ANSI/RESNET/ICC Standard 380 and the test procedures required by the Washington State Energy Code. The home is depressurized to a standard pressure; the result is reported in ACH50 and compared against the code's maximum allowable leakage. Builders can expect: a signed test report ready to submit to the building department; Retrotec fans and gauges maintained to manufacturer calibration standards; help identifying where air escapes if a home doesn't pass, before a retest; scheduling coordinated with the build timeline. Results: CFM50, ACH50, written report or code form.
-- Duct leakage tests: "Measuring how much air leaks from your HVAC system." (owner, 2026-10-23, issue #11) Standards: ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. Results: total duct leakage and/or duct leakage to outside, as the job requires; written report or code form.
+- Duct leakage testing (owner, 2026-10-30, PR #27; replaces "Measuring how much air leaks from your HVAC system."; also the home page card text): "Duct leakage testing measures how much air escapes from a home’s HVAC system before it reaches where it’s meant to go. Leaky ductwork wastes energy, reduces comfort, and can keep a home from passing the energy code." Performed with calibrated Retrotec equipment, following ANSI/RESNET/ICC Standard 380 and the test procedures required by WSEC and IECC. The duct system is pressurized to a standard test pressure while the airflow needed to maintain it is measured; results are reported in CFM25 (cubic feet per minute at 25 pascals) and compared against the code's maximum allowable leakage. Depending on the job, total duct leakage, duct leakage to outside, or both are measured. Reported results: total duct leakage (all air leaking from the duct system, into conditioned space or outside it); duct leakage to outside (air lost to unconditioned areas such as attics, crawlspaces, and garages); written report or code form (documentation ready to submit to the building department). Builders can expect: accurate, repeatable results from properly calibrated equipment; rough-in or final testing (testing at rough-in lets you find and seal leaks before ducts are covered, when repairs are easiest); help locating problem areas when a system doesn't pass so the HVAC contractor can make targeted repairs before a retest.
 - Washington C3 calculations: "Showing a home complies with the Washington State Energy Code using the Washington points system." Deliverable: WSEC R406 energy credit worksheet.
 - Home energy audits: "For homeowners: finding drafts and air leakage." (owner, 2026-10-23, issue #13; previously "air leaks") Diagnostic testing for existing homes to locate drafts and air leakage. Uses thermal imaging and smoke guns (owner, 2026-10-23, issue #11). Results: CFM50 and ACH50, written report.
 - Energy efficiency consultation: "Comprehensive energy consultation from framing to final." (owner, 2026-10-28, issue #17; owner's wording, no further detail given)
@@ -39,7 +39,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Voice: building scientists; precise, technical wording.
 - Describe the business as building science / building performance testing.
 - Standards/protocols followed (business-wide): ANSI/RESNET/ICC 301; ANSI/RESNET/ICC 380; ANSI/RESNET/ICC 310 (owner confirmed both 301 and 310, 2026-10-21); WSEC / IECC test procedures.
-- Results reported (as applicable): CFM50 and ACH50; total duct leakage; duct leakage to outside; written report / code form.
+- Results reported (as applicable): CFM50 and ACH50; CFM25 (duct leakage, owner, 2026-10-30, PR #27); total duct leakage; duct leakage to outside; written report / code form.
 - Equipment: calibrated Retrotec equipment (owner confirmed "calibrated").
 
 ## Privacy promises (approved by owner, 2026-10-21)
