@@ -68,13 +68,23 @@ export const services: Service[] = [
   },
   {
     slug: 'duct-leakage-testing',
-    name: 'Duct Leakage Tests',
-    short: 'Measuring how much air leaks from your HVAC system.',
+    name: 'Duct Leakage Testing',
+    short:
+      'Duct leakage testing measures how much air escapes from a home’s HVAC system before it reaches where it’s meant to go. Leaky ductwork wastes energy, reduces comfort, and can keep a home from passing the energy code.',
     body: [
-      'Duct system leakage testing with calibrated Retrotec equipment, following ANSI/RESNET/ICC 380 and WSEC/IECC test procedures.',
-      'Total duct leakage and/or duct leakage to outside are measured and reported, as the job requires.',
+      'We perform duct leakage testing using calibrated Retrotec equipment, following ANSI/RESNET/ICC Standard 380 and the test procedures required by the Washington State Energy Code (WSEC) and the International Energy Conservation Code (IECC).',
+      'During the test, the duct system is pressurized to a standard test pressure while we measure the airflow needed to maintain it. Results are reported in cubic feet per minute at 25 pascals (CFM25) and compared against the code’s maximum allowable leakage. Depending on the job’s requirements, we measure total duct leakage, duct leakage to outside, or both.',
     ],
-    reports: ['Total duct leakage', 'Duct leakage to outside', 'Written report or code form'],
+    expect: [
+      'Accurate, repeatable results from properly calibrated equipment.',
+      'Rough-in or final testing: testing at rough-in lets you find and seal leaks before ducts are covered, when repairs are easiest.',
+      'Help when a system doesn’t pass: we help locate problem areas so your HVAC contractor can make targeted repairs before a retest.',
+    ],
+    reports: [
+      'Total duct leakage: all air leaking from the duct system, whether into conditioned space or outside it.',
+      'Duct leakage to outside: air lost to unconditioned areas such as attics, crawlspaces, and garages.',
+      'Written report or code form: documentation ready to submit to your building department.',
+    ],
     title: 'Duct Leakage Test Spokane | Spokane Blower Doors',
     description:
       'Duct leakage testing per ANSI/RESNET/ICC 380 and WSEC/IECC test procedures. North Idaho and Eastern Washington. Call 509-903-8595.',
