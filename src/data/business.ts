@@ -106,7 +106,7 @@ export const services: Service[] = [
     slug: 'washington-energy-code-compliance',
     name: 'WSEC Energy Credits',
     cardText:
-      'Washington homes must earn a minimum number of energy credits, based on home size, through efficiency upgrades like higher R-Value insulation, HVAC, and Photovoltaic systems',
+      'Washington homes must earn a minimum number of energy credits, based on home size, through upgrades like higher R-Value insulation, high-efficiency HVAC, and Photovoltaic systems',
     short:
       'Washington homes must earn a minimum number of energy credits to comply with the Washington State Energy Code. The number required depends on the size of the home, and credits are earned through efficiency choices such as envelope improvements, high-efficiency HVAC and water heating, reduced air leakage, and renewable energy.',
     body: [
