@@ -20,7 +20,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - By appointment (confirmed by owner, 2026-10-21)
 
 ## Services on the site (owner, 2026-10-21)
-- Blower door testing for new homes (owner, 2026-10-30, PR #25; service page renamed from "New-home code compliance tests"; home page card titled "Code Compliance")
+- Blower door testing for new homes (owner, 2026-10-30, PR #25; service page renamed from "New-home code compliance tests"; home page card titled "Code Compliance"; home page card text, owner, 2026-10-30, PR #26: "Blower door testing verifies that new homes meet energy code airtightness requirements. We use calibrated Retrotec equipment to give builders accurate results they can submit with confidence.")
 - Duct leakage tests
 - Washington C3 calculations
 - Home energy audits
