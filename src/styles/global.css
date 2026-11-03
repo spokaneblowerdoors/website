@@ -97,6 +97,8 @@ p { margin: 0 0 1em; }
 
 .prose { max-width: 68ch; }
 .prose ul { padding-left: 1.2em; }
+.service-photo { float: right; width: 240px; max-width: 40%; height: auto; margin: 4px 0 12px 20px; border-radius: 12px; }
+@media (max-width: 600px) { .service-photo { float: none; display: block; max-width: 70%; margin: 12px auto; } }
 .breadcrumb { font-size: .95rem; color: var(--muted); margin-bottom: 12px; }
 .breadcrumb a { color: var(--muted); }
 

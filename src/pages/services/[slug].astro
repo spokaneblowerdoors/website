@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { business, services, type Service } from '../../data/business';
+import blowerDoor from '../../assets/blower-door-setup.jpg';
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -16,6 +18,15 @@ const others = services.filter((s) => s.slug !== service.slug);
       <p class="breadcrumb"><a href="/services/">Services</a> / {service.name}</p>
       <h1>{service.name}</h1>
       <p class="lead">{service.short}</p>
+      {service.slug === 'blower-door-testing' && (
+        <Image
+          class="service-photo"
+          src={blowerDoor}
+          alt="Retrotec blower door fan and frame set up in a doorway"
+          width={240}
+          densities={[1, 2]}
+        />
+      )}
       {service.body.map((p) => <p>{p}</p>)}
       {service.expect && (
         <>
