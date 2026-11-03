@@ -447,3 +447,4 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-10-30: Home page C3 card text reworded; banner airflow lines now span the full width, behind the text (issue #32).
 - 2026-10-22: OPERATIONS.md and AGENTS.md revised after a fresh-reader test (rollback version choice, DNSSEC move order, token rotation commands, agent switching, maintainer access). Added `.nvmrc` (Node 24).
 - 2026-10-30: Renamed Home Energy Audits to Home Air Leakage Diagnostics and replaced Energy Efficiency Consultation text (issue #37). No configuration change.
+- 2026-11-03: Added two insulation photos (overlapping pair) to the Energy Efficiency Consultation page and removed the temporary `/photo-previews/` page (issue #50). No configuration change.

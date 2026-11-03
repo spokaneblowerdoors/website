@@ -3,6 +3,8 @@ import { Image } from 'astro:assets';
 import Base from '../../layouts/Base.astro';
 import { business, services, type Service } from '../../data/business';
 import blowerDoor from '../../assets/blower-door-setup.jpg';
+import pinkInsulation from '../../assets/pink-insulation-wall.jpg';
+import framingPanels from '../../assets/framing-insulation-panels.jpg';
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -28,6 +30,12 @@ const others = services.filter((s) => s.slug !== service.slug);
         />
       )}
       {service.body.map((p) => <p>{p}</p>)}
+      {service.slug === 'energy-efficiency-consultation' && (
+        <div class="photo-pair">
+          <Image src={pinkInsulation} alt="Wall framing with pink insulation installed between the studs" width={260} densities={[1, 2]} />
+          <Image src={framingPanels} alt="Framed wall with brown insulation and electrical panels" width={170} densities={[1, 2]} />
+        </div>
+      )}
       {service.expect && (
         <>
           <h2>{service.expectHeading ?? 'What builders can expect'}</h2>
@@ -56,3 +64,10 @@ const others = services.filter((s) => s.slug !== service.slug);
     </div>
   </section>
 </Base>
+
+<style is:global>
+  .photo-pair { position: relative; width: 100%; max-width: 380px; height: 260px; margin: 1.25rem 0; }
+  .photo-pair img { position: absolute; height: auto; border-radius: 12px; border: 3px solid #fff; box-shadow: 0 6px 18px rgba(19, 32, 46, .18); }
+  .photo-pair img:first-child { left: 0; top: 0; }
+  .photo-pair img:last-child { left: 190px; top: 36px; max-width: calc(100% - 190px); }
+</style>
