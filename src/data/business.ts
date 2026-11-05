@@ -70,7 +70,7 @@ export const services: Service[] = [
   },
   {
     slug: 'duct-leakage-testing',
-    name: 'Duct Leakage Testing',
+    name: 'Rough-In Duct Testing',
     short:
       'Duct leakage testing measures how much air escapes from a home’s HVAC system before it reaches where it’s meant to go. Leaky ductwork wastes energy, reduces comfort, and can keep a home from passing the energy code.',
     body: [
