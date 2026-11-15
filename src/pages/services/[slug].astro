@@ -31,17 +31,17 @@ const others = services.filter((s) => s.slug !== service.slug);
           densities={[1, 2]}
         />
       )}
+      {service.slug === 'duct-leakage-testing' && (
+        <div class="photo-stack">
+          <Image src={ductFan} alt="Duct testing fan with flexible duct and gauge cables set up on a floor" width={200} densities={[1, 2]} />
+          <Image src={ductAirHandler} alt="Flexible duct from the test fan connected to a sealed air handler opening" width={200} densities={[1, 2]} />
+        </div>
+      )}
       {service.body.map((p) => <p>{p}</p>)}
       {service.slug === 'energy-efficiency-consultation' && (
         <div class="photo-pair">
           <Image src={pinkInsulation} alt="Wall framing with pink insulation installed between the studs" width={260} densities={[1, 2]} />
           <Image src={framingPanels} alt="Framed wall with brown insulation and electrical panels" width={170} densities={[1, 2]} />
-        </div>
-      )}
-      {service.slug === 'duct-leakage-testing' && (
-        <div class="photo-row">
-          <Image src={ductFan} alt="Duct testing fan with flexible duct and gauge cables set up on a floor" width={200} densities={[1, 2]} />
-          <Image src={ductAirHandler} alt="Flexible duct from the test fan connected to a sealed air handler opening" width={200} densities={[1, 2]} />
         </div>
       )}
       {service.expect && (
@@ -76,8 +76,9 @@ const others = services.filter((s) => s.slug !== service.slug);
 <style is:global>
   .photo-pair { position: relative; width: 100%; max-width: 380px; height: 260px; margin: 1.25rem 0; }
   .photo-pair img { position: absolute; height: auto; border-radius: 12px; border: 3px solid #fff; box-shadow: 0 6px 18px rgba(19, 32, 46, .18); }
-  .photo-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 1.25rem 0; }
-  .photo-row img { max-width: 100%; height: auto; border-radius: 12px; border: 3px solid #fff; box-shadow: 0 6px 18px rgba(19, 32, 46, .18); }
+  .photo-stack { float: right; display: flex; flex-direction: column; gap: 12px; width: 200px; max-width: 40%; margin: 4px 0 12px 20px; }
+  .photo-stack img { width: 100%; height: auto; border-radius: 12px; border: 3px solid #fff; box-shadow: 0 6px 18px rgba(19, 32, 46, .18); }
+  @media (max-width: 600px) { .photo-stack { float: none; max-width: 70%; margin: 12px auto; } }
   .photo-pair img:first-child { left: 0; top: 0; }
   .photo-pair img:last-child { left: 190px; top: 36px; max-width: calc(100% - 190px); }
 </style>
