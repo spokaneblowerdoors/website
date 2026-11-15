@@ -20,7 +20,7 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - By appointment (confirmed by owner, 2026-10-21)
 
 ## Services on the site (owner, 2026-10-21)
-- Blower door testing for new homes (owner, 2026-10-30, PR #25; service page renamed from "New-home code compliance tests"; home page card titled "Code Compliance"; home page card text, owner, 2026-10-30, PR #26: "Blower door testing verifies that new homes meet energy code airtightness requirements. We use calibrated Retrotec equipment to give builders accurate results they can submit with confidence.")
+- Blower door testing for new homes (owner, 2026-10-30, PR #25; service page renamed from "New-home code compliance tests"; home page card titled "Blower Door Testing" (owner, 2026-11-15, issue #58; was "Code Compliance"); home page card text, owner, 2026-10-30, PR #26: "Blower door testing verifies that new homes meet energy code airtightness requirements. We use calibrated Retrotec equipment to give builders accurate results they can submit with confidence.")
 - Duct leakage testing (owner, 2026-10-30, PR #27; renamed from "Duct leakage tests")
 - Service name "Rough-In Duct Testing" (owner, 2026-11-05, issue #52): replaces the displayed service name "Duct Leakage Testing" wherever the service name appears (menu, home page card, services list, service page heading). Page address unchanged.
 - Washington C3 calculations (shown on the site as "WSEC Energy Credits", owner, 2026-10-30, PR #29)

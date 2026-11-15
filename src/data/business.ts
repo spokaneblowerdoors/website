@@ -49,7 +49,7 @@ export const services: Service[] = [
   {
     slug: 'blower-door-testing',
     name: 'Blower Door Testing',
-    cardName: 'Code Compliance',
+    cardName: 'Blower Door Testing',
     cardText:
       'Blower door testing verifies that new homes meet energy code airtightness requirements. We use calibrated Retrotec equipment to give builders accurate results they can submit with confidence.',
     short:
