@@ -33,8 +33,8 @@ const others = services.filter((s) => s.slug !== service.slug);
       )}
       {service.slug === 'duct-leakage-testing' && (
         <div class="photo-stack">
-          <Image src={ductFan} alt="Test fan connected to flexible duct on a slab floor" width={200} densities={[1, 2]} />
           <Image src={ductAirHandler} alt="Flexible duct connected to a sealed air handler opening" width={200} densities={[1, 2]} />
+          <Image src={ductFan} alt="Test fan connected to flexible duct on a slab floor" width={200} densities={[1, 2]} />
         </div>
       )}
       {service.body.map((p) => <p>{p}</p>)}
