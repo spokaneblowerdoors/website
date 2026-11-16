@@ -10,7 +10,7 @@ export const business = {
   hours: 'By appointment',
   responseNote: 'We respond within 24 hours. Appointments are typically booked 5 days out.',
   serviceArea: 'North Idaho and Eastern Washington',
-  ownership: 'Spokane Blower Doors, a division of 2-OH Air Solutions, is a locally owned building performance testing company based in Post Falls, Idaho.',
+  ownership: 'Spokane Blower Doors, a DBA of 2-OH Air Solutions, is a locally owned building performance testing company based in Post Falls, Idaho.',
   weeklyTesting: 'We test homes every week across Spokane, Coeur d’Alene, and the surrounding area.',
   builderFamiliarity: 'Familiar with both Washington (WSEC) and Idaho (IECC) requirements',
   customers: ['Home builders', 'Homeowners', 'HVAC contractors', 'Remodelers'],
