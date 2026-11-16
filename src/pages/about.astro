@@ -4,30 +4,40 @@ import { business, services } from '../data/business';
 ---
 <Base
   title="About | Spokane Blower Doors"
-  description="Spokane Blower Doors: building science and building performance testing, including ERI scores, in Eastern Washington and North Idaho."
+  description="Locally owned building performance testing company in Post Falls, Idaho serving North Idaho and Eastern Washington. Call 509-903-8595."
 >
   <section class="section">
     <div class="wrap prose">
       <h1>About Spokane Blower Doors</h1>
-      <p class="lead">Spokane Blower Doors provides building science and building performance testing.</p>
-      <p>{business.ownership}</p>
-      <p>We work with {business.customersPhrase} across {business.serviceArea}.</p>
+      <p class="lead">{business.ownership} We help home builders, HVAC contractors, remodelers, and homeowners across {business.serviceArea} pass code, earn energy credits, and build tighter, more efficient homes.</p>
+      <h2>Who we are</h2>
+      <p>{business.weeklyTesting} Our goal is simple: show up when scheduled, test accurately, and get you clear results fast so your project keeps moving.</p>
+      <h2>Why builders work with us</h2>
+      <ul>
+        <li>Response within 24 hours</li>
+        <li>Appointments typically available 5 days out</li>
+        <li>Fast, clear reports and code forms</li>
+        <li>{business.builderFamiliarity}</li>
+      </ul>
+      <h2>Standards and credentials</h2>
+      <ul>
+        <li>{business.credential}</li>
+        <li>Testing per ANSI/RESNET/ICC 301, 310, and 380</li>
+        <li>Washington State Energy Code (WSEC) and IECC test procedures</li>
+        <li>Calibrated {business.equipment} testing equipment</li>
+      </ul>
+      <h2>What you get</h2>
+      <ul>
+        <li>CFM50 and ACH50 results</li>
+        <li>Total duct leakage and leakage to outside</li>
+        <li>A written report or completed code form</li>
+      </ul>
       <h2>Services</h2>
       <ul>
         {services.map((s) => <li><a href={`/services/${s.slug}/`}>{s.name}</a></li>)}
       </ul>
-      <h2>Standards and methods</h2>
-      <ul>
-        {business.standards.map((s) => <li>{s}</li>)}
-      </ul>
-      <p>Testing is performed with calibrated {business.equipment} equipment.</p>
-      <h2>Credentials</h2>
-      <p>{business.credential}</p>
-      <h2>Reported results, as applicable</h2>
-      <ul>
-        {business.reporting.map((r) => <li>{r}</li>)}
-      </ul>
-      <p>Service is {business.hours.toLowerCase()}. To schedule or request a quote, call <a href={business.phoneHref}>{business.phone}</a> or <a href="/contact/">send a message</a>.</p>
+      <h2>Ready to schedule?</h2>
+      <p>Call <a href={business.phoneHref}>{business.phone}</a> or <a href="/contact/">send a message</a>. Service is by appointment.</p>
     </div>
   </section>
 </Base>
