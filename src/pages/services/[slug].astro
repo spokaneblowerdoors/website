@@ -7,6 +7,7 @@ import pinkInsulation from '../../assets/pink-insulation-wall.jpg';
 import framingPanels from '../../assets/framing-insulation-panels.jpg';
 import ductFan from '../../assets/duct-test-fan.jpg';
 import ductAirHandler from '../../assets/duct-test-air-handler.jpg';
+import eriGauge from '../../assets/eri-score-gauge.png';
 
 export function getStaticPaths() {
   return services.map((service) => ({ params: { slug: service.slug }, props: { service } }));
@@ -44,6 +45,15 @@ const others = services.filter((s) => s.slug !== service.slug);
           <Image src={framingPanels} alt="Framed wall with brown insulation and electrical panels" width={170} densities={[1, 2]} />
         </div>
       )}
+      {service.slug === 'eri-scores' && (
+        <Image
+          class="eri-gauge"
+          src={eriGauge}
+          alt="Energy Rating Index gauge showing an ERI of 47, ERI with PV of 47, ERI Target of 77, and UA Compliance: Pass"
+          width={480}
+          densities={[1, 2]}
+        />
+      )}
       {service.expect && (
         <>
           <h2>{service.expectHeading ?? 'What builders can expect'}</h2>
@@ -74,6 +84,7 @@ const others = services.filter((s) => s.slug !== service.slug);
 </Base>
 
 <style is:global>
+  .eri-gauge { display: block; width: 100%; max-width: 480px; height: auto; margin: 1.25rem 0; }
   .photo-stack { float: right; display: flex; flex-direction: column; gap: 12px; width: 200px; max-width: 40%; margin: 4px 0 12px 20px; }
   .photo-stack img { width: 100%; height: auto; border-radius: 12px; }
   @media (max-width: 600px) { .photo-stack { float: none; max-width: 70%; margin: 12px auto; } }
