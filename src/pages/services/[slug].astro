@@ -38,21 +38,21 @@ const others = services.filter((s) => s.slug !== service.slug);
           <Image src={ductFan} alt="Test fan connected to flexible duct on a slab floor" width={200} densities={[1, 2]} />
         </div>
       )}
+      {service.slug === 'eri-scores' && (
+        <Image
+          class="eri-gauge"
+          src={eriGauge}
+          alt="Energy Rating Index gauge showing an ERI of 47, ERI with PV of 47, ERI Target of 77, and UA Compliance: Pass"
+          width={420}
+          densities={[1, 2]}
+        />
+      )}
       {service.body.map((p) => <p>{p}</p>)}
       {service.slug === 'energy-efficiency-consultation' && (
         <div class="photo-pair">
           <Image src={pinkInsulation} alt="Wall framing with pink insulation installed between the studs" width={260} densities={[1, 2]} />
           <Image src={framingPanels} alt="Framed wall with brown insulation and electrical panels" width={170} densities={[1, 2]} />
         </div>
-      )}
-      {service.slug === 'eri-scores' && (
-        <Image
-          class="eri-gauge"
-          src={eriGauge}
-          alt="Energy Rating Index gauge showing an ERI of 47, ERI with PV of 47, ERI Target of 77, and UA Compliance: Pass"
-          width={480}
-          densities={[1, 2]}
-        />
       )}
       {service.expect && (
         <>
@@ -84,7 +84,9 @@ const others = services.filter((s) => s.slug !== service.slug);
 </Base>
 
 <style is:global>
-  .eri-gauge { display: block; width: 100%; max-width: 480px; height: auto; margin: 1.25rem 0; }
+  .eri-gauge { float: right; width: 420px; max-width: 45%; height: auto; margin: 4px 0 16px 24px; border-radius: 12px; background: #fff; box-shadow: 0 3px 10px rgba(19, 32, 46, .12); }
+  @media (min-width: 1000px) { .eri-gauge { margin-right: -180px; } }
+  @media (max-width: 600px) { .eri-gauge { float: none; display: block; max-width: 100%; margin: 16px auto; } }
   .photo-stack { float: right; display: flex; flex-direction: column; gap: 12px; width: 200px; max-width: 40%; margin: 4px 0 12px 20px; }
   .photo-stack img { width: 100%; height: auto; border-radius: 12px; }
   @media (max-width: 600px) { .photo-stack { float: none; max-width: 70%; margin: 12px auto; } }
