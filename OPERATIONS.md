@@ -450,3 +450,4 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-11-03: Added two insulation photos (overlapping pair) to the Energy Efficiency Consultation page and removed the temporary `/photo-previews/` page (issue #50). No configuration change.
 - 2026-11-15: Home page card "Code Compliance" renamed "Blower Door Testing"; added two duct photos (stacked, to the side) to the Rough-In Duct Testing page (issue #58). No configuration change.
 - 2026-11-16: Home page headline/intro reworded, "Request a quote" wording in the home page Schedule testing box, "Call for a quote" line removed under home Services, contact form added at the bottom of the home page (issue #61). No configuration change.
+- 2026-11-16: Added "Part of 2-OH Air Solutions" section to the About page (issue #73). No configuration change.
