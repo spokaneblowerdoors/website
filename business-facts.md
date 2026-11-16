@@ -12,13 +12,15 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Web address: spokaneblowerdoors.com (confirmed by owner; registered at GoDaddy 2026-10-21)
 - Owner name: Gabe Bell (confirmed by owner, 2026-10-21)
 - Phone: 509-903-8595 (confirmed by owner, 2026-10-21)
-- Email for website messages and accounts: Gabriel@2ohairsolutions.com (confirmed by owner, 2026-10-21)
+- Email for website messages and accounts: Gabriel@2ohairsolutions.com (confirmed by owner, 2026-10-21). Contact message form delivery stays on this address (owner, 2026-11-16, issue #73).
+- Email shown on the site (owner, 2026-11-16, issue #73): Gabriel@Spokaneblowerdoors.com. Replaces the previously shown address in the footer, Contact page, and Privacy page.
 - Service area: North Idaho and Eastern Washington (confirmed by owner, 2026-10-21; wording order and no town list per owner, 2026-10-23, issue #11)
 - Ownership (owner, 2026-10-28, issue #17): owned and operated from Post Falls, Idaho. Shown on the About page only. No street address, no other towns.
 - Home page headline and intro (owner, 2026-11-16, issue #61): "Blower door and building performance testing in Spokane, Coeur d’Alene, and surrounding areas" and "Blower door testing, duct leakage testing, ERI ratings, and energy code compliance for builders and homeowners." Names Spokane and Coeur d’Alene only in this home page headline; no other towns.
 - Home page "Schedule testing" box (owner, 2026-11-16, issue #61): "Service is by appointment. Request a quote." The "Call for a quote" line under the home page Services heading is removed. A "Send a message" form sits at the bottom of the home page.
 - Message response and booking time (owner, 2026-11-16, issue #63): "We respond within 24 hours. Appointments are typically booked 5 days out." Shown under the "Send a message" heading on the home page and Contact page.
 - About page text (owner, 2026-11-16, issue #71): replaces the About page copy. Intro: "Spokane Blower Doors is a locally owned building performance testing company based in Post Falls, Idaho. We help home builders, HVAC contractors, remodelers, and homeowners across North Idaho and Eastern Washington pass code, earn energy credits, and build tighter, more efficient homes." Who we are: "We test homes every week across Spokane, Coeur d’Alene, and the surrounding area. Our goal is simple: show up when scheduled, test accurately, and get you clear results fast so your project keeps moving." Why builders work with us: response within 24 hours; appointments typically available 5 days out; fast, clear reports and code forms; familiar with both Washington (WSEC) and Idaho (IECC) requirements. What you get: CFM50 and ACH50 results; total duct leakage and leakage to outside; a written report or completed code form. Spokane and Coeur d’Alene are named only in this About sentence and the home page headline; no other towns. Credential keeps the approved BSI wording.
+- Parent company (owner, 2026-11-16, issue #73): the About page intro begins "Spokane Blower Doors, a division of 2-OH Air Solutions, is a locally owned building performance testing company based in Post Falls, Idaho." The separate "Part of 2-OH Air Solutions" section was removed. No other details about 2-OH Air Solutions (services, location, history) are approved.
 
 ## Hours
 - By appointment (confirmed by owner, 2026-10-21)
