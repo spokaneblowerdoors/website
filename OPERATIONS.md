@@ -451,3 +451,4 @@ The owner's habit: **open an issue and add the `agent` label** (or comment `@cla
 - 2026-11-15: Home page card "Code Compliance" renamed "Blower Door Testing"; added two duct photos (stacked, to the side) to the Rough-In Duct Testing page (issue #58). No configuration change.
 - 2026-11-16: Home page headline/intro reworded, "Request a quote" wording in the home page Schedule testing box, "Call for a quote" line removed under home Services, contact form added at the bottom of the home page (issue #61). No configuration change.
 - 2026-11-16: About page intro now says "a division of 2-OH Air Solutions" (replaces the separate section); displayed contact email changed to Gabriel@Spokaneblowerdoors.com. Form delivery (Web3Forms) still goes to Gabriel@2ohairsolutions.com (issue #73). No configuration change.
+- 2026-11-16: About page intro wording changed from "a division of 2-OH Air Solutions" to "a DBA of 2-OH Air Solutions" (issue #75). No configuration change.
