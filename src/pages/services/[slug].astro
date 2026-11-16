@@ -43,7 +43,7 @@ const others = services.filter((s) => s.slug !== service.slug);
           class="eri-gauge"
           src={eriGauge}
           alt="Energy Rating Index gauge showing an ERI of 47, ERI with PV of 47, ERI Target of 77, and UA Compliance: Pass"
-          width={300}
+          width={420}
           densities={[1, 2]}
         />
       )}
@@ -84,7 +84,8 @@ const others = services.filter((s) => s.slug !== service.slug);
 </Base>
 
 <style is:global>
-  .eri-gauge { float: right; width: 300px; max-width: 45%; height: auto; margin: 4px 0 16px 24px; border-radius: 12px; background: #fff; box-shadow: 0 6px 20px rgba(19, 32, 46, .22), 0 1px 4px rgba(19, 32, 46, .12); }
+  .eri-gauge { float: right; width: 420px; max-width: 45%; height: auto; margin: 4px 0 16px 24px; border-radius: 12px; background: #fff; box-shadow: 0 3px 10px rgba(19, 32, 46, .12); }
+  @media (min-width: 1000px) { .eri-gauge { margin-right: -180px; } }
   @media (max-width: 600px) { .eri-gauge { float: none; display: block; max-width: 100%; margin: 16px auto; } }
   .photo-stack { float: right; display: flex; flex-direction: column; gap: 12px; width: 200px; max-width: 40%; margin: 4px 0 12px 20px; }
   .photo-stack img { width: 100%; height: auto; border-radius: 12px; }
