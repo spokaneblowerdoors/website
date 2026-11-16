@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { business, services } from '../data/business';
+import ContactForm from '../components/ContactForm.astro';
 ---
 <Base
   title="Spokane Blower Doors | Building Performance Testing"
@@ -8,8 +9,8 @@ import { business, services } from '../data/business';
 >
   <section class="hero">
     <div class="wrap">
-      <h1>Building performance testing in Eastern Washington and North Idaho</h1>
-      <p>Envelope airtightness and duct leakage testing, ERI scores, Washington energy code calculations and home energy audits for {business.customersPhrase}.</p>
+      <h1>Blower door and building performance testing in Spokane, Coeur d’Alene, and surrounding areas</h1>
+      <p>Blower door testing, duct leakage testing, ERI ratings, and energy code compliance for builders and homeowners.</p>
       <div class="actions">
         <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
         <a class="btn btn-secondary" href="/contact/">Send a message</a>
@@ -29,7 +30,6 @@ import { business, services } from '../data/business';
   <section class="section">
     <div class="wrap">
       <h2>Services</h2>
-      <p class="lead">{business.pricing}.</p>
       <div class="cards">
         {services.map((s) => (
           <article class="card">
@@ -68,10 +68,17 @@ import { business, services } from '../data/business';
       <div class="cta">
         <div>
           <h2>Schedule testing</h2>
-          <p>Service is {business.hours.toLowerCase()}. {business.pricing}.</p>
+          <p>Service is {business.hours.toLowerCase()}. Request a quote.</p>
         </div>
         <a class="btn btn-call" href={business.phoneHref}>Call {business.phone}</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="wrap">
+      <h2>Send a message</h2>
+      <ContactForm />
     </div>
   </section>
 </Base>

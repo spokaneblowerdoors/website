@@ -15,6 +15,8 @@ Lines marked `UNCONFIRMED` are not approved yet.
 - Email for website messages and accounts: Gabriel@2ohairsolutions.com (confirmed by owner, 2026-10-21)
 - Service area: North Idaho and Eastern Washington (confirmed by owner, 2026-10-21; wording order and no town list per owner, 2026-10-23, issue #11)
 - Ownership (owner, 2026-10-28, issue #17): owned and operated from Post Falls, Idaho. Shown on the About page only. No street address, no other towns.
+- Home page headline and intro (owner, 2026-11-16, issue #61): "Blower door and building performance testing in Spokane, Coeur d’Alene, and surrounding areas" and "Blower door testing, duct leakage testing, ERI ratings, and energy code compliance for builders and homeowners." Names Spokane and Coeur d’Alene only in this home page headline; no other towns.
+- Home page "Schedule testing" box (owner, 2026-11-16, issue #61): "Service is by appointment. Request a quote." The "Call for a quote" line under the home page Services heading is removed. A "Send a message" form sits at the bottom of the home page.
 
 ## Hours
 - By appointment (confirmed by owner, 2026-10-21)
