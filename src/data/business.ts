@@ -8,6 +8,7 @@ export const business = {
   email: 'Gabriel@2ohairsolutions.com',
   url: 'https://spokaneblowerdoors.com',
   hours: 'By appointment',
+  responseNote: 'We respond within 24 hours. Appointments are typically booked 5 days out.',
   serviceArea: 'North Idaho and Eastern Washington',
   ownership: 'Owned and operated from Post Falls, Idaho.',
   customers: ['Home builders', 'Homeowners', 'HVAC contractors', 'Remodelers'],
